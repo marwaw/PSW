@@ -28,12 +28,12 @@
 	        <input name = "name" type = "text" size = "25" maxlength = "30">
 	    </label></p>
 
+	    <p><label>Email: 
+            <input name = "email" type = "email"  size = "25">
+         </label></p>
+
 	    <p>
             <label>Wiek: 
-
-                <!-- the <select> tag presents a drop-down -->
-                <!-- list with choices indicated by the -->
-                <!-- <option> tags -->
                <select name = "age">
                   <option selected> &lt;18 </option>
                   <option>18-24</option>
@@ -61,6 +61,31 @@
                <input name = "howtosite" type = "radio" 
                   value = "other"></label>
         </p>
+
+        <p>
+            Jakie przepisy interesowałyby Cię najbardziej?<br>
+
+            <label>Desery
+               <input name = "wanted" type = "checkbox" 
+                  value = "Dessert"></label>
+            <label>Obiady
+               <input name = "wanted" type = "checkbox" 
+                  value = "Lunch"></label>
+            <label>Sezonowe
+               <input name = "wanted" type = "checkbox" 
+                  value = "Season"></label> 
+            <label>Śniadania
+               <input name = "wanted" type = "checkbox" 
+                  value = "Breakfast"></label>
+            <label>Przekąski
+               <input name = "wanted" type = "checkbox" 
+                  value = "Snack"></label>
+         </p>
+
+         <p><label>Dodatkowe uwagi:<br>
+            <textarea name = "comments"
+               rows = "4" cols = "36">Twój komentarz</textarea>
+         </label></p>
 
 	    <p>
 	       <input type = "submit" value = "Wyślij">
