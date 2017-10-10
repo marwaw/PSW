@@ -5,24 +5,23 @@
 	<meta charset = "utf-8">
 	<title>Formularz</title>
 	<meta name = "keywords" content = "form, opinion, rating">
-    <meta name = "description" content = "Forumlarz dotyczący strony">
+  <meta name = "description" content = "Forumlarz dotyczący strony">
 
 </head>
 
 <body>
-	<h1>Formularz</h1>
-
+  <h1>PRZEPIŚNIK</h1>
+  <img src="main_photo.jpg" alt="Zdjecie potrawy" >
+  <p><a href="main.html">Strona główna</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a href="form.html">Feedback</a>
+    <a href="tables.html">Przelicznik</a>
+  </p>
+  <hr/>
+	<h2>Formularz</h2>
 	<p>Wypełnienie tego formularza zajmie Ci tylko chwilę, a dzięki niemu będziemy mogły rozwijać tę stronę.</p>
 
-	<form>
-		<!-- ???? 
-        <input type = "hidden" name = "recipient"
-           value = "deitel@deitel.com">
-        <input type = "hidden" name = "subject" 
-           value = "Feedback Form">
-        <input type = "hidden" name = "redirect" 
-           value = "main.html"> 
-        ???? -->
+	<form method = "post" action = "www.example.com">
 
 	    <p><label>Imię:
 	        <input name = "name" type = "text" size = "25" maxlength = "30">
@@ -33,65 +32,62 @@
          </label></p>
 
 	    <p>
-            <label>Wiek: 
-               <select name = "age">
-                  <option selected> &lt;18 </option>
-                  <option>18-24</option>
-                  <option>25-35</option>
-                  <option>35-55</option>
-                  <option>55-80</option>
-                  <option> &gt;80 </option>
-               </select>
-            </label>
+          <label>Wiek: 
+            <select name = "age">
+              <option selected> &lt;18 </option>
+              <option>18-24</option>
+              <option>25-35</option>
+              <option>35-55</option>
+              <option>55-80</option>
+              <option> &gt;80 </option>
+            </select>
+          </label>
         </p>
 
-        <p>
-            Jak trafiłeś/aś na naszą stronę?<br>
-
-            <label>Wyszukiwarka
-               <input name = "howtosite" type = "radio"
-                  value = "search engine" checked></label>
-            <label>Z polecenia znajomych
-               <input name = "howtosite" type = "radio" 
-                  value = "friends"></label> 
-            <label>Facebook
-               <input name = "howtosite" type = "radio" 
-                  value = "facebook"></label>
-            <label>Inne
-               <input name = "howtosite" type = "radio" 
-                  value = "other"></label>
+        <p>Jak trafiłeś/aś na naszą stronę?<br>
+          <label>Wyszukiwarka
+            <input name = "howtosite" type = "radio"
+              value = "search engine" checked></label>
+          <label>Z polecenia znajomych
+            <input name = "howtosite" type = "radio" 
+              value = "friends"></label> 
+          <label>Facebook
+            <input name = "howtosite" type = "radio" 
+              value = "facebook"></label>
+          <label>Inne
+            <input name = "howtosite" type = "radio" 
+              value = "other"></label>
         </p>
 
-        <p>
-            Jakie przepisy interesowałyby Cię najbardziej?<br>
+        <p>Jakie przepisy interesowałyby Cię najbardziej?<br>
+          <label>Desery
+            <input name = "wanted" type = "checkbox" 
+              value = "Dessert"></label>
+          <label>Obiady
+            <input name = "wanted" type = "checkbox" 
+              value = "Lunch"></label>
+          <label>Sezonowe
+            <input name = "wanted" type = "checkbox" 
+              value = "Season"></label> 
+          <label>Śniadania
+            <input name = "wanted" type = "checkbox" 
+              value = "Breakfast"></label>
+          <label>Przekąski
+            <input name = "wanted" type = "checkbox" 
+              value = "Snack"></label>
+        </p>
 
-            <label>Desery
-               <input name = "wanted" type = "checkbox" 
-                  value = "Dessert"></label>
-            <label>Obiady
-               <input name = "wanted" type = "checkbox" 
-                  value = "Lunch"></label>
-            <label>Sezonowe
-               <input name = "wanted" type = "checkbox" 
-                  value = "Season"></label> 
-            <label>Śniadania
-               <input name = "wanted" type = "checkbox" 
-                  value = "Breakfast"></label>
-            <label>Przekąski
-               <input name = "wanted" type = "checkbox" 
-                  value = "Snack"></label>
-         </p>
-
-         <p><label>Dodatkowe uwagi:<br>
-            <textarea name = "comments"
-               rows = "4" cols = "36" maxlength = "200">Twój komentarz</textarea>
-         </label></p>
+        <p><label>Dodatkowe uwagi:<br>
+          <textarea name = "comments"
+            rows = "4" cols = "36" maxlength = "200">Twój komentarz</textarea>
+          </label></p>
 
 	    <p>
 	       <input type = "submit" value = "Wyślij">
 	       <input type = "reset" value = "Wyczyść">
 	    </p>   
     </form>
-
-</body>
+  <hr/>
+  <p>&copy;2017 Martyna i Ada</p>
+  </body>
 </html>
