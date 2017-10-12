@@ -21,15 +21,42 @@
 	<h2>Formularz</h2>
 	<p>Wypełnienie tego formularza zajmie Ci tylko chwilę, a dzięki niemu będziemy mogły rozwijać tę stronę.</p>
 
-	<form method = "post" action = "www.example.com">
+	<form method = "post" action = "www.example.com" autocomplete="on">
 
 	    <p><label>Imię:
-	        <input name = "name" type = "text" size = "25" maxlength = "30">
+	        <input name = "name" type = "text" size = "25" maxlength = "30" autofocus> (np. Karol)
 	    </label></p>
 
+      <p><label>Nazwisko:
+          <input name = "surname" type = "text" size = "25" maxlength = "30" required> (np. Kowalski)
+      </label></p>
+
+      <p><label for = "txtList"> Miesiąc urodzenia:
+          <input type = "text" id ="txtList" list = "months">
+          <datalist id = "months">
+            <option value = "Styczeń">
+            <option value = "Luty">
+            <option value = "Marzec">
+            <option value = "Kwiecień">
+            <option value = "Maj">
+            <option value = "Czerwiec">
+            <option value = "Lipiec">
+            <option value = "Sierpień">
+            <option value = "Wrzesień">
+            <option value = "Październik">
+            <option value = "Listopad">
+            <option value = "Grudzień">
+          </datalist>
+      </label></p>
+
 	    <p><label>Email: 
-            <input name = "email" type = "text"  size = "25">
+            <input name = "email" type = "email"  size = "25" required> (np. karol@domena.com)
          </label></p>
+
+
+      <p><label>Tel:
+            <input type = "tel" pattern = "\d{3}-\d{3}-\d{3}"/> (np. 111-111-111)
+          </label></p>
 
 	    <p>
           <label>Wiek: 
