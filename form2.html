@@ -23,60 +23,58 @@
 	</nav>
 	<hr/>
 
-	<content>
+	<h2>Wypełnij formularz!</h2>
+	<form method="post" action="www.example.com" autocomplete="on">
 
-		<h2>Wypełnij formularz!</h2>
-		<form method="post" action="www.example.com" autocomplete="on">
+		<p>
+			<label>Jakich najczęściesz szukasz przepisów?
+				<input type="text" name="recipee" placeholder="ciasto">
+				(Podaj nazwę dania)
+			</label>
+		</p>
+		 <p>
+          <label>Jaki kolor powinna mieć ta strona?
+             <input type = "color" name="color"/> 
+                (Podaj szesnastkowy kod koloru)
+          </label>
+      	 </p>
 
-			<p>
-				<label>Jakich najczęściesz szukasz przepisów?
-					<input type="text" name="recipee" placeholder="ciasto">
-					(Podaj nazwę dania)
-				</label>
-			</p>
-			 <p>
-            <label>Jaki kolor powinna mieć ta strona?
-               <input type = "color" nname="color"/> 
-                  (Podaj szesnastkowy kod koloru)
-            </label>
-        	 </p>
+		 <p>
+          <label>W jakim miesiącu najczęściej używasz produktów sezonowych?
+             <input type = "month" name="month" /> 
+          </label>(Wybierz miesiąc)
+       </p>
 
-			 <p>
-            <label>W jakim miesiącu najczęściej używasz produktów sezonowych?
-               <input type = "month" name="month" /> 
-            </label>(Wybierz miesiąc)
-         </p>
+        <p>
+          <label>Wyszukaj składnik:
+             <input type = "search"  placeholder = "dynia" />
+          </label> (Wprowadź składnik)
+       </p>
 
-          <p>
-            <label>Wyszukaj składnik:
-               <input type = "search"  placeholder = "dynia" />
-            </label> (Wprowadź składnik)
-         </p>
+       <p>
+          <label>Posiadasz swoją stronę? Podaj link:
+             <input type = "url" name="url" 
+                placeholder = "http://www.superstrona.com" /> 
+                (np http://www.rozumnarezerwie.pl)
+          </label>
+       </p>
 
-         <p>
-            <label>Posiadasz swoją stronę? Podaj link:
-               <input type = "url" name="url" 
-                  placeholder = "http://www.superstrona.com" /> 
-                  (np http://www.rozumnarezerwie.pl)
-            </label>
-         </p>
+        <p>
+          <label>Jak oceniasz naszą stronę?
+             0 <input type = "range" 
+                min = "0"
+                max = "10"
+                value = "5" /> 10
+          </label>
+       </p>
+       <p>
+          <input type = "submit" value = "Wyślij" />
+          <input type = "reset" value = "Wyczyść" />
+       </p>   
 
-          <p>
-            <label>Jak oceniasz naszą stronę?
-               0 <input type = "range" 
-                  min = "0"
-                  max = "10"
-                  value = "5" /> 10
-            </label>
-         </p>
-         <p>
-            <input type = "submit" value = "Wyślij" />
-            <input type = "reset" value = "Wyczyść" />
-         </p>   
-
-		</form>
+	</form>
 		
-	</content>
+
 
 	<hr/>
 	<footer>
