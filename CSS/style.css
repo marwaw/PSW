@@ -1,0 +1,51 @@
+/* Menu */
+
+nav {
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    width: 10em;
+    background-color: RoyalBlue;
+}
+
+a { 
+    text-decoration: none; 
+}
+
+nav ul { 
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    z-index: 3;
+}
+
+li { 
+    background-color: white;
+    width: 10em;
+    height: 2em;
+    color: black; 
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2)
+}
+
+li:hover { 
+    background-color: PowderBlue;
+}
+
+nav:hover > .first-level  { 
+    display: block; 
+}
+
+.first-level li:hover > .second-level {
+    display: inline;
+    position: absolute;
+    left: 10em;
+}
+
+.second-level li:hover > .third-level {
+    display: inline;
+    position: absolute;
+    left: 10em;
+}
+
+/* MENU END */
