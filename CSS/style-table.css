@@ -1,3 +1,26 @@
+/* HEADER */
+header {
+	background-image: url("../main_photo.jpg");
+	background-color: pink;
+	background-repeat: repeat;	 
+	height: 200px;
+	width: 100%;
+	background-position: left;
+}
+
+header h1 {
+	border: 5px solid white ;
+    position: relative;
+    top: 10%;
+    width: 50%;
+    padding: 30px 10px;
+    margin: auto;
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    background-color: rgba(72, 75, 73, 0.7);
+}
+
 .table-convert {
 	border-collapse: collapse;
 	width: 50%;

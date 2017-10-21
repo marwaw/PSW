@@ -9,7 +9,16 @@ header {
 }
 
 header h1 {
-	color: white;
+	border: 5px solid white ;
+    position: relative;
+    top: 10%;
+    width: 50%;
+    padding: 30px 10px;
+    margin: auto;
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    background-color: rgba(72, 75, 73, 0.7);
 }
 
  #main{
