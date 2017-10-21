@@ -1,0 +1,28 @@
+@media all{
+body {
+	background-color: grey;
+}
+
+article p strong {
+	color: brown;
+	font-weight: bold;
+	font-size: 110%;
+}
+
+.extra {
+	font-size: 120%;
+}
+
+article article {
+	font-family: tahoma, helvetica, sans-serif;
+	font-style: italic;
+	line-height: 2;
+}
+}
+ @media print{
+ 	body{
+ 		background-color: white;
+ 		color: black
+ 	}
+ }
+

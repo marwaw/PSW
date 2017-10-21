@@ -11,3 +11,28 @@ header {
 header h1 {
 	color: white;
 }
+
+ #main{
+	font-size: 30pt;
+	color: purple;
+	font-variant: small-caps;
+}
+
+#recipee_title{
+	font-size: 255%;
+	font-style: italic;
+}
+
+#welcome{
+	font-size: 26px;
+}
+
+#smacznego{
+	font-size: 2em;
+}
+
+.recipee{
+	color: brown;
+	font-size: 130%;
+	font-weight: bold;
+}
