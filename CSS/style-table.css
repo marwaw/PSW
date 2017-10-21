@@ -1,0 +1,25 @@
+.table-convert {
+	border-collapse: collapse;
+	width: 50%;
+}
+
+.table-convert .table-convert {
+	width: 100%;
+}
+
+.table-convert th, td {
+	border-width: 1px;
+	border-style: solid;
+	border-color: grey;
+	height: 30px;
+	padding: 5px;
+	
+}
+
+.table-convert td {
+	text-align: left;
+}
+
+tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
