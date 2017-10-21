@@ -6,7 +6,7 @@
 	<title>Formularz</title>
 	<meta name = "keywords" content = "form, opinion, rating">
   <meta name = "description" content = "Forumlarz dotyczący strony">
-
+  <link rel = "stylesheet" type = "text/css" href = "CSS/style-form.css">
 </head>
 
 <body>
@@ -63,10 +63,13 @@
             <input type = "tel" pattern = "\d{3}-\d{3}-\d{3}"/> (np. 111-111-111)
           </label></p>
 
+
+
 	    <p>
           <label>Wiek: 
             <select name = "age">
-              <option selected> &lt;18 </option>
+              <option  disabled="disabled"> &lt; 0 </option>
+              <option selected> 0-18 </option>
               <option>18-24</option>
               <option>25-35</option>
               <option>35-55</option>
