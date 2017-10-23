@@ -14,11 +14,16 @@ header h1 {
     top: 10%;
     width: 50%;
     padding: 30px 10px;
-    margin: auto;
+    margin: 0 30px;
     color: white;
     font-size: 50px;
     text-align: center;
     background-color: rgba(72, 75, 73, 0.7);
+}
+
+p img {
+    float: left;
+    margin: 0 10px 0 10px;
 }
 
 @media all{
@@ -52,7 +57,8 @@ strong:only-child{
 details:not(summary){
 	color: MidnightBlue;
 }
-}
+
+
  @media print{
  	body{
  		background-color: white;
@@ -66,7 +72,9 @@ details:not(summary){
 p {
   page-break-after: always;
 }
-}
+
+
+
 
 
 
