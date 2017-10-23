@@ -27,7 +27,7 @@ body {
 }
 
 article p strong {
-	color: brown;
+
 	font-weight: bold;
 	font-size: 110%;
 }
@@ -41,11 +41,33 @@ article article {
 	font-style: italic;
 	line-height: 2;
 }
+
+aside p:first-child{
+	color: pink;
+}
+strong:only-child{
+	color: pink;
+}
+
+details:not(summary){
+	color: MidnightBlue;
+}
 }
  @media print{
  	body{
  		background-color: white;
  		color: black
  	}
- }
+ @page :first {
+  margin-left: 50%;
+  margin-top: 50%;
+}
+
+p {
+  page-break-after: always;
+}
+}
+
+
+
 

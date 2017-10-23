@@ -55,6 +55,12 @@ header h1 {
 	bottom: 40px;
 }
 
+
+:target {
+    border: 2px solid #D4D4D4;
+    background-color: pink;
+}
+
 /* FOOTER */
 footer {
 	text-align: center;

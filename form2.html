@@ -24,7 +24,24 @@
                 font-size: 50px;
                 text-align: center;
                 background-color: rgba(72, 75, 73, 0.7);}
-    
+      p:empty {
+    width:100% ;
+    height: 20px;
+    background: grey;
+  }
+
+  label:last-child{
+    font-style: italic;
+  }
+
+input:nth-last-child(2){
+  color: MidnightBlue;
+}
+input:nth-last-child(1){
+  color: MediumPurple;
+}
+
+    }
     </style>
 </head>
 <body>
@@ -42,7 +59,7 @@
 	</nav>
 	<hr/>
 
-	<h2>Wypełnij formularz!</h2>
+	<h2 style="font-size: 3em;">Wypełnij formularz!</h2>
 	<form method="post" action="www.example.com" autocomplete="on">
 
 		<p>
@@ -73,8 +90,7 @@
           <label>Posiadasz swoją stronę? Podaj link:
              <input type = "url" name="url" 
                 placeholder = "http://www.superstrona.com" /> 
-                (np http://www.rozumnarezerwie.pl)
-          </label>
+          </label>(np http://www.rozumnarezerwie.pl)
        </p>
 
         <p>
@@ -89,7 +105,7 @@
           <input type = "submit" value = "Wyślij" />
           <input type = "reset" value = "Wyczyść" />
        </p>   
-
+       <p></p>
 	</form>
 		
 

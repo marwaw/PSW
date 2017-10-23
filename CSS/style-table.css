@@ -8,6 +8,9 @@ header {
 	background-position: left;
 }
 
+body{
+            background: url(zen.png) fixed no-repeat bottom right;
+      } 
 header h1 {
 	border: 5px solid white ;
     position: relative;
@@ -21,6 +24,7 @@ header h1 {
     background-color: rgba(72, 75, 73, 0.7);
 }
 
+      
 .table-convert {
 	border-collapse: collapse;
 	width: 50%;
