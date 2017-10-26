@@ -14,7 +14,6 @@ header h1 {
     top: 10%;
     width: 50%;
     padding: 30px 10px;
-    margin: 0 30px;
     color: white;
     font-size: 50px;
     text-align: center;
@@ -123,20 +122,24 @@ details:not(summary){
 	color: MidnightBlue;
 }
 
+p {
+  page-break-after: always;
+}
 
- @media print{
+
+@media print{
  	body{
  		background-color: white;
  		color: black
  	}
+ }
+
  @page :first {
   margin-left: 50%;
   margin-top: 50%;
 }
 
-p {
-  page-break-after: always;
-}
+
 
 
 

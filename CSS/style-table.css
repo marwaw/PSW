@@ -9,10 +9,6 @@ header {
 	width: 100%;
 	background-position: left;
 }
-
-body{
-    background: url(zen.png) fixed no-repeat bottom right;
-}
  
 header h1 {
 	border: 5px solid white;
@@ -26,6 +22,10 @@ header h1 {
     font-size: 50px;
     text-align: center;
     background-color: rgba(72, 75, 73, 0.7);
+}
+
+body{
+    background: url(../zen.png) fixed no-repeat bottom right;
 }
 
       
