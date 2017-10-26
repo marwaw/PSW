@@ -2,7 +2,7 @@
 header {
 	position: relative;
 	top: 10px;
-	background-image: url("../main_photo.jpg");
+	background-image: url("../images/main_photo.jpg");
 	background-color: pink;
 	background-repeat: repeat;	 
 	height: 200px;
@@ -25,7 +25,7 @@ header h1 {
 }
 
 body{
-    background: url(../zen.png) fixed no-repeat bottom right;
+    background: url(../images/zen.png) fixed no-repeat bottom right;
 }
 
       
