@@ -18,7 +18,7 @@ header h1 {
     color: white;
     font-size: 50px;
     text-align: center;
-    background-color: rgba(72, 75, 73, 0.7);
+    background-color: hsla(330, 42%, 50%, 0.50);
 }
 
 input[type=text] {

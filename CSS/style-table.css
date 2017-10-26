@@ -1,7 +1,5 @@
 /* HEADER */
 header {
-	position: relative;
-	top: 10px;
 	background-image: url("../images/main_photo.jpg");
 	background-color: pink;
 	background-repeat: repeat;	 
@@ -9,12 +7,11 @@ header {
 	width: 100%;
 	background-position: left;
 }
- 
+
 header h1 {
-	border: 5px solid white;
-    position: absolute;
-    top: 0;
-    left: 100px;
+	border: 5px solid white ;
+    position: relative;
+    top: 10%;
     width: 50%;
     padding: 30px 10px;
     margin: auto;
