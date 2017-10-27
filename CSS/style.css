@@ -79,6 +79,7 @@ nav:hover >.first-level {
     position: relative;
     top: 20px;
     width: 70%;
+    padding: 10px 0 20px 0;
     margin: auto;
 }
 
@@ -86,9 +87,9 @@ nav:hover >.first-level {
 footer {
     text-align: center;
     position: fixed;
-    left: 0px;
-    bottom: 0px;
-    margin: 10px 0;
+    left: 0;
+    bottom: 0;
+    margin: 0;
     padding: 5px;
     width: 100%;
     background: #999;
