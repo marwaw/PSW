@@ -73,3 +73,23 @@ nav:hover >.first-level {
     left: 10em;
 }
 /* MENU END */
+
+.page-content {
+    position: relative;
+    top: 20px;
+    bottom: 20px;
+    width: 70%;
+    margin: auto;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    margin: 10px 0;
+    padding: 5px;
+    width: 100%;
+    background: #999;
+}
