@@ -6,6 +6,7 @@
 	<title>Formularz</title>
 	<meta name = "keywords" content = "form, opinion, rating">
   <meta name = "description" content = "Forumlarz dotyczący strony">
+  <link rel = "stylesheet" type = "text/css" href = "CSS/style.css">
   <link rel = "stylesheet" type = "text/css" href = "CSS/style-form.css">
 </head>
 
@@ -14,16 +15,32 @@
     <h1>PRZEPIŚNIK</h1>
   </header>
 
-  <nav>
-    <p><a href="index.html">Strona główna</a>
-    <a href="kontakt.html">Kontakt</a>
-    <a href="form.html">Feedback</a>
-    <a href="tables.html">Przelicznik</a>
-    <a href="form2.html">Formularz</a>
-    </p>
+  <nav> Menu
+    <ul class = "first-level">
+      <li><a href="index.html">Strona główna</a></li>
+      <li>Kontakt
+        <ul class = "second-level">
+          <li><a href="kontakt.html">Napisz do nas</a></li>
+          <li>Formularze  
+            <ul class = "third-level">
+              <li><a href="form.html">Feedback</a></li>
+              <li><a href="form2.html">Formularz</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>Przydatne
+        <ul class = "second-level">
+          <li>Tabele 
+            <ul class = "third-level">
+              <li><a href="tables.html">Przelicznik</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
   </nav>
   
-  <hr/>
 	<h2>Formularz</h2>
 	<p>Wypełnienie tego formularza zajmie Ci tylko chwilę, a dzięki niemu będziemy mogły rozwijać tę stronę.</p>
 

@@ -4,65 +4,40 @@
 	<meta charset = "utf-8">
 	<title>Formularz2</title>
 	<meta name = "keywords" content = "form, info, cooking, feedback">
-    <meta name = "description" content = "Drugi formularz">
-    <style type = "text/css"> 
-      input:focus {background-color: pink;}
-
-      header {
-        background-image: url("images/main_photo.jpg");
-        background-color: pink;
-        background-repeat: repeat;   
-        height: 200px;
-        width: 100%;
-        background-position: left;
-      }
-
-      header h1 {
-        border: 5px solid white ;
-          position: relative;
-          top: 10%;
-          width: 50%;
-          padding: 30px 10px;
-          margin: auto;
-          color: white;
-          font-size: 50px;
-          text-align: center;
-          background-color: rgba(72, 75, 73, 0.7);
-      }
-
-      body{
-            background-image: url(images/zen.png);
-            background-attachment: scroll;
-            background-repeat: repeat-y;
-            background-size: 20%;
-            background-position: bottom right;}
-
-      p:empty { width:100% ;
-                height: 20px;
-                background: grey;}
-
-      label:last-child{ font-style: italic;}
-
-      input:nth-last-child(2){ color: MidnightBlue;}
-
-      input:nth-last-child(1){ color: MediumPurple;}
-
-    </style>
+  <meta name = "description" content = "Drugi formularz">
+  <link rel = "stylesheet" type = "text/css" href = "CSS/style.css">
+  <link rel = "stylesheet" type = "text/css" href = "CSS/style-form2.css">
 </head>
 <body>
 	<header>
 		<h1>PRZEPIŚNIK</h1>
 	</header>
 
-	<nav>
-		<p><a href="index.html">Strona główna</a>
-		<a href="kontakt.html">Kontakt</a>
-		<a href="form.html">Feedback</a>
-		<a href="tables.html">Przelicznik</a>
-		<a href="form2.html">Formularz</a>
-		</p>
-	</nav>
-	<hr/>
+	<nav> Menu
+    <ul class = "first-level">
+      <li><a href="index.html">Strona główna</a></li>
+      <li>Kontakt
+        <ul class = "second-level">
+          <li><a href="kontakt.html">Napisz do nas</a></li>
+          <li>Formularze  
+            <ul class = "third-level">
+              <li><a href="form.html">Feedback</a></li>
+              <li><a href="form2.html">Formularz</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>Przydatne
+        <ul class = "second-level">
+          <li>Tabele 
+            <ul class = "third-level">
+              <li><a href="tables.html">Przelicznik</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
 
 	<h2 style="font-size: 3em;">Wypełnij formularz!</h2>
 	<form method="post" action="www.example.com" autocomplete="on">

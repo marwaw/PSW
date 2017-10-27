@@ -1,0 +1,23 @@
+input:focus {
+  background-color: pink;
+}
+
+body {
+  background-image: url(images/zen.png);
+  background-attachment: scroll;
+  background-repeat: repeat-y;
+  background-size: 20%;
+  background-position: bottom right;
+}
+
+p:empty { 
+  width:100% ;
+  height: 20px;
+  background: grey;
+}
+
+label:last-child{ font-style: italic;}
+
+input:nth-last-child(2){ color: MidnightBlue;}
+
+input:nth-last-child(1){ color: MediumPurple;}

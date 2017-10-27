@@ -5,30 +5,8 @@
 	<title>Kontakt</title>
 	<meta name = "keywords" content = "contact, mail">
     <meta name = "description" content = "Strona z danymi kontaktowymi">
-    <style type = "text/css">
-      header {background-image: url("images/main_photo.jpg");
-              background-color: pink;
-              background-repeat: repeat;   
-              height: 200px;
-              width: 100%;
-              background-position: left;}
-
-      header h1 { border: 5px solid white ;
-                position: relative;
-                top: 10%;
-                width: 50%;
-                padding: 30px 10px;
-                margin: auto;
-                color: white;
-                font-size: 50px;
-                text-align: center;
-                background-color: rgba(72, 75, 73, 0.7);}
-
-      a:last-of-type:visited {color: grey;}
-
-      a:link{color: pink;}
-      
-    </style>
+    <link rel = "stylesheet" type = "text/css" href = "CSS/style.css">
+    <link rel = "stylesheet" type = "text/css" href = "CSS/style-kontakt.css">
 
 </head>
 <body>
@@ -36,16 +14,32 @@
     <h1>PRZEPIŚNIK</h1>
   </header>
 
-  <nav>
-    <p><a href="index.html">Strona główna</a>
-    <a href="kontakt.html">Kontakt</a>
-    <a href="form.html">Feedback</a>
-    <a href="tables.html">Przelicznik</a>
-    <a href="form2.html">Formularz</a>
-    </p>
+  <nav> Menu
+    <ul class = "first-level">
+      <li><a href="index.html">Strona główna</a></li>
+      <li>Kontakt
+        <ul class = "second-level">
+          <li><a href="kontakt.html">Napisz do nas</a></li>
+          <li>Formularze  
+            <ul class = "third-level">
+              <li><a href="form.html">Feedback</a></li>
+              <li><a href="form2.html">Formularz</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>Przydatne
+        <ul class = "second-level">
+          <li>Tabele 
+            <ul class = "third-level">
+              <li><a href="tables.html">Przelicznik</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
   </nav>
-	
-<hr/>
+
 	<p>Znajdź nas na <a href = "http://www.facebook.com">Facebooku</a></p>
 	<p> Jeśli chcesz podzielić się przepisem lub po prostu chcesz nam coś powiedzieć &rarr;
 		<a href = "mailto:blogkulinarny@example.com">napisz do nas</a>!</p>
