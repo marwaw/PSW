@@ -13,10 +13,11 @@ header h1 {
     position: relative;
     top: 10%;
     width: 50%;
-    padding: 30px 10px;
+    padding: 10px 10px;
     margin: auto;
     color: white;
-    font-size: 50px;
+    font-family: 'Amatic SC', cursive;
+    font-size: 5em;
     text-align: center;
     background-color: rgba(72, 75, 73, 0.7);
 }
@@ -93,3 +94,4 @@ footer {
     width: 100%;
     background: #999;
 }
+
