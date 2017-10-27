@@ -93,5 +93,6 @@ footer {
     padding: 5px;
     width: 100%;
     background: #999;
+    z-index: 3;
 }
 
