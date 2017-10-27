@@ -2,3 +2,33 @@ a:last-of-type:visited {color: grey;}
 
 a:link{color: pink;}
       
+img{
+    position: relative;
+    -webkit-animation: movingimage linear 10s 1s 2 alternate;
+    -moz-animation: movingimage linear 10s 1s 2 alternate;
+    animation: movingimage linear 10s 1s 2 alternate;
+ }
+ @-webkit-keyframes movingimage 
+ {
+    0%   {opacity: 0; left: 0px; top: 0px;}
+    25%  {opacity: 1; left: 100px; top: 0px;}
+    50%  {opacity: 0; left: 200px; top: 0px;}
+    75%  {opacity: 1; left: 300px; top: 0px;}
+    100% {opacity: 0; left: 400px; top: 0px;}
+ }
+ @-moz-keyframes movingimage 
+ {
+    0%   {opacity: 0; left: 0px; top: 0px;}
+    25%  {opacity: 1; left: 100px; top: 0px;}
+    50%  {opacity: 0; left: 200px; top: 0px;}
+    75%  {opacity: 1; left: 300px; top: 0px;}
+    100% {opacity: 0; left: 400px; top: 0px;}
+ }
+ @keyframes movingimage
+ {
+    0%   {opacity: 0; left: 0px; top: 0px;}
+    25%  {opacity: 1; left: 100px; top: 0px;}
+    50%  {opacity: 0; left: 200px; top: 0px;}
+    75%  {opacity: 1; left: 300px; top: 0px;}
+    100% {opacity: 0; left: 400px; top: 0px;}
+ }
