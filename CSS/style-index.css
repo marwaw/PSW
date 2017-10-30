@@ -68,3 +68,18 @@ p:active, a:active{
             -o-transform: translate(100px,0px); 
             transform: skewX(30deg);
          }
+
+
+          #meltingimages 
+         {
+            position: relative;
+         }
+         #meltingimages img 
+         {
+            position: absolute;
+            margin-top: 20px;
+            -webkit-transition: opacity 3s ease;
+            transition: opacity 3s ease;
+         }
+         #meltingimages img.top:hover 
+            { opacity:0; }
