@@ -64,24 +64,52 @@ p {
 }
 
 
-.multicolumns
-         {
-            /* setting the number of columns to 3 */
-            -webkit-column-count: 4; 
-            -moz-column-count: 4; 
-            -o-column-count: 4;
-            column-count: 4;
-            /* setting the space between columns to 30px */
-            -webkit-column-gap: 30px;
-            -moz-column-gap: 30px; 
-            -o-column-gap: 30px; 
-            column-gap: 30px;
-            /* adding a 1px black line between each column */
-            -webkit-column-rule: 1px outset black; 
-            -moz-column-rule: 1px outset black; 
-            -o-column-rule: 1px outset black; 
-            column-rule: 1px outset black;
+
+
+@media handheld and (max-width: 480px), 
+         screen and (max-device-width: 480px), 
+         screen and (max-width: 480px) 
+      {
+         .multicolumns {
+            -webkit-column-count: 1; 
+            column-count: 1; }
+      }
+      /* styles for devices with screen widths of 481px to 1024px */
+      @media only screen and (min-width: 481px) and 
+         (max-width: 1024px)
+      {
+       .multicolumns  {
+            -webkit-column-count: 3; 
+            -moz-column-count: 3; 
+            -o-column-count: 3;
+            column-count: 3;
+            -webkit-column-gap: 10px;
+            -moz-column-gap: 10px; 
+            -o-column-gap: 10px; 
+            column-gap: 10px;
+            -webkit-column-rule: 1px outset pink; 
+            -moz-column-rule: 1px outset pink; 
+            -o-column-rule: 1px outset pink; 
+            column-rule: 1px outset pink;
          }
+      }
+      /* styles for devices with screen widths of 1025px or greater */
+      @media only screen and (min-width: 1025px)
+      {
+        .multicolumns {
+            -webkit-column-count: 5; 
+            -moz-column-count: 5; 
+            -o-column-count: 5;
+            column-count: 5;
+            -webkit-column-gap: 10px;
+            -moz-column-gap: 10px; 
+            -o-column-gap: 10px; 
+            column-gap: 10px;
+            -webkit-column-rule: 1px outset pink; 
+            -moz-column-rule: 1px outset pink; 
+            -o-column-rule: 1px outset pink; 
+            column-rule: 1px outset pink;
+         }      }
 
 
 

@@ -2,6 +2,7 @@ header h1 {
     background-color: hsla(330, 42%, 50%, 0.50);
 }
 
+
 input[type=text] {
     width: 80px;
 }
@@ -23,3 +24,11 @@ input:required {
 	box-shadow: 0 0 0 3px red;
 }
 
+
+div{
+	 background-image: url(../images/contact.png), url(../images/background.png);
+     background-position: top right, 100% center;
+     background-origin: border-box, content-box;
+     background-repeat: no-repeat, repeat;
+
+}
