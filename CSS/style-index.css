@@ -8,9 +8,10 @@ p:active, a:active{
 	font-variant: small-caps;
 }
 
-#recipee_title{
+#recipe_title{
 	font-size: 255%;
 	font-style: italic;
+	text-shadow: -3px 5px 5px dimgrey;
 }
 
 #welcome{
@@ -21,7 +22,7 @@ p:active, a:active{
 	font-size: 2em;
 }
 
-.recipee {
+.recipe {
 	color: brown;
 	font-size: 130%;
 	font-weight: bold;
@@ -32,3 +33,38 @@ p:active, a:active{
     border: 2px solid #D4D4D4;
     background-color: pink;
 }
+
+ img
+         {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            -webkit-transition: -webkit-transform 3s; 
+            -moz-transition: -moz-transform 3s; 
+            -o-transition: -o-transform 3s; 
+            transition: transform 3s;
+         }
+         #img1:hover
+         {
+            -webkit-transform: rotate(360deg) scale(2, 2); 
+            -moz-transform: rotate(360deg) scale(2, 2);
+            -o-transform: rotate(360deg) scale(2, 2); 
+            transform: rotate(360deg) scale(1.2, 1.2);
+         }
+
+
+         #img2:hover
+         {
+         	-webkit-transform: translate(100px,0px);
+            -moz-transform: translate(100px,0px);
+            -o-transform: translate(100px,0px); 
+            transform: translate(100px,0px);
+         }
+
+
+         #img3:hover
+         {
+         	-webkit-transform: translate(100px,0px);
+            -moz-transform: translate(100px,0px);
+            -o-transform: translate(100px,0px); 
+            transform: skewX(30deg);
+         }
