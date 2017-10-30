@@ -32,12 +32,3 @@ img{
     75%  {opacity: 1; left: 300px; top: 0px;}
     100% {opacity: 0; left: 400px; top: 0px;}
  }
-
-#borderimg2 {
-    border: 10px solid transparent;
-    padding: 15px;
-    -webkit-border-image: url(images/border.png) round; /* Safari 3.1-5 */
-    -o-border-image: url(images/border.png) round; /* Opera 11-12.1 */
-    border-image: url(images/border.png) round;
-    border-image-slice: 20%;
-}
