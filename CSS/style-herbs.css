@@ -27,8 +27,20 @@
  .flexbox > div:hover { 
     width: 200px; color: white; font-weight: bold; }
 
- .flexbox > div:nth-child(even):hover { background-color: rgb(78, 191, 64); }
- 
- .flexbox > div:nth-child(odd):hover { background-color: rgb(52, 127, 43); }
+ .flexbox > div:nth-child(even):hover { 
+    background: #5ad26e; /* Old Browsers */
+    background: -webkit-radial-gradient(center,#5ad26e,#0b5f18); /*Safari 5.1-6*/
+    background: -o-radial-gradient(center,#5ad26e,#0b5f18); /*Opera 11.1-12*/
+    background: -moz-radial-gradient(center,#5ad26e,#0b5f18); /*Fx 3.6-15*/
+    background: radial-gradient(ellipse at center, #5ad26e, #0b5f18); /*Standard*/
+}
+     
+ .flexbox > div:nth-child(odd):hover { 
+    background: #d6f747; /* Old Browsers */
+    background: -webkit-radial-gradient(center,#d6f747,#0b5f18); /*Safari 5.1-6*/
+    background: -o-radial-gradient(center,#d6f747,#0b5f18); /*Opera 11.1-12*/
+    background: -moz-radial-gradient(center,#d6f747,#0b5f18); /*Fx 3.6-15*/
+    background: radial-gradient(ellipse at center, #d6f747, #0b5f18); /*Standard*/
+}
 
  p { height: 250px; overflow: hidden; font-family: "Rosario" }
