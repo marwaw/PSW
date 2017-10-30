@@ -92,7 +92,12 @@ footer {
     margin: 0;
     padding: 5px;
     width: 100%;
-    background: #999;
     z-index: 3;
+
+    background: #efabeb; /* Old Browsers */
+    background: -webkit-linear-gradient(top,#efabeb,#6f676e); /*Safari 5.1-6*/
+    background: -o-linear-gradient(top,#efabeb,#6f676e); /*Opera 11.1-12*/
+    background: -moz-linear-gradient(top,#efabeb,#6f676e); /*Fx 3.6-15*/
+    background: linear-gradient(to bottom, #efabeb, #6f676e); /*Standard*/
 }
 
