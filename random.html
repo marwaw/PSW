@@ -2,11 +2,11 @@
 <html>
 <head> <!-- niewyswietlane info o stronie-->
 	<meta charset = "utf-8">
-	<title>Menu</title>
+	<title>Wylosuj</title>
 	<meta name = "keywords" content = "web page, design,  
          HTML5, tutorial, personal, help, index, form, 
          contact, feedback, list, links, deitel">
-    <meta name = "description" content = "oPIS Strony">
+    <meta name = "description" content = "Strona do losowania przepisu">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
     <link rel = "stylesheet" type = "text/css" href = "CSS/style.css">
     <link rel = "stylesheet" type = "text/css" href = "CSS/style-index.css">
@@ -44,8 +44,29 @@
 		</ul>
 	</nav>
 
-<div class = "page-content">
-</div>
+	<div class = "page-content">
+		<p>Nie wiesz co dziś upiec? Wylosuj sobie ciasto!</p>
+		<button id="random-btn">Losuj</button>
+		<p id="your_recipe"> </p>
+		<script>
+			document.getElementById("random-btn").addEventListener("click", getRandomRecipe);
+
+			function getRandomRecipe() {
+				var rand = Math.floor(Math.random() * 5);
+				var recipe = " ";
+
+				switch (rand) {
+					case 0: recipe = "Murzynek"; break;
+					case 1: recipe = "Tort"; break;
+					case 2: recipe = "Sernik"; break;
+					case 3: recipe = "Muffinki"; break;
+					case 4: recipe = "Dziś nie jedz słodkiego!"; break;
+					default: recipe = " ";
+				}
+				document.getElementById("your_recipe").innerHTML = "Twój przepis: " + recipe;
+			}
+		</script>
+	</div>
 <footer>
     &copy;2017 Martyna i Ada
 </footer>
