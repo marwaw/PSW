@@ -45,7 +45,7 @@
 
   <div class = "page-content">
 	<h2 style="font-size: 3em;" id="borderrepeat">Wypełnij formularz!</h2>
-	<form method="post" action="www.example.com" autocomplete="on">
+	<form method="post"  autocomplete="on">
 
 		<p>
 			<label>Jakich najczęściesz szukasz przepisów?
@@ -83,11 +83,11 @@
              0 <input type = "range" 
                 min = "0"
                 max = "10"
-                value = "5" /> 10
+                value = "5" step="1" id="range"  /> 10
           </label>
        </p>
        <p id="borderstretch">
-          <input type = "submit" value = "Wyślij" />
+          <input type = "submit" value = "Wyślij" onclick="promptFunction()" />
           <input type = "reset" value = "Wyczyść" />
        </p>   
        <p></p>
@@ -96,5 +96,19 @@
 	<footer>
     &copy;2017 Martyna i Ada
 	</footer>
+
+  <script>
+    function promptFunction() {
+    var imie = prompt("Jak masz na imię?", "Babeczka");
+    if (imie != "") {
+      window.alert("Dziękujemy, " + imie+ " !");
+    }
+    else{
+      window.alert("Dziękujemy nieznajomy!");
+    }
+}
+</script>
+
+
 </body>
 </html>
