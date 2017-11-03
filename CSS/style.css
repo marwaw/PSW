@@ -46,7 +46,7 @@ nav ul {
     z-index: 3;
 }
 
-li { 
+nav li { 
     background-color: white;
     width: 10em;
     height: 2em;
@@ -54,7 +54,7 @@ li {
     box-shadow: 8px 8px 20px rgba(0,0,0,0.5);
 }
 
-li:hover { 
+nav li:hover { 
     background-color: PowderBlue;
 }
 
