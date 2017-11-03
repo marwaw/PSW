@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
     <link rel = "stylesheet" type = "text/css" href = "CSS/style.css">
    <link rel = "stylesheet" type = "text/css" href = "CSS/style-lists.css">
+
 </head>
 
 <body>
@@ -103,8 +104,17 @@
 
 		</article>
 
-		<button onclick="document.getElementById('thanks').innerHTML = 'Dziękujemy za pobranie przepisu!'"><a href = "przepis.txt" download>Pobierz przepis</a></button>
-      <p id="thanks"> </p>
+		<button id="download-btn"><a href = "przepis.txt" download>Pobierz przepis</a></button>
+      	<p id="thanks"> </p>
+
+      	<script>
+		   	document.getElementById("download-btn").addEventListener("click", displayThanks);
+
+			function displayThanks() {
+			   document.getElementById('thanks').innerHTML = 'Dziękujemy za pobranie przepisu!';
+			}
+   		</script>
+
 		<p><a href = "http://www.bloblo.pl/image/336388/default/murzynek%2Bw%2Bczekoladzie%5B1%5D.jpg" download>Pobierz zdjęcie</a></p>
 		</section>
 	</div>
