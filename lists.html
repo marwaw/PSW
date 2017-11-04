@@ -110,6 +110,7 @@
 			</ol>
 			</details>
 
+			<p><button id="buy-btn" onclick="ListIngredients()">Lista Składników</button></p>
 			<p>Smacznego! </p>
 
 		<script type="text/javascript">
@@ -122,6 +123,18 @@
   				sum+=1;
 			}
 			window.alert("Ten przepis ma " + sum + " składników");
+		}
+
+		function ListIngredients(){ 
+			var ing = document.getElementById("ingredientsList");
+			var items = ing.getElementsByTagName("li");
+			var toBuy = "Do kupienia:" + "<br>";
+			var i=0;
+			while (i < items.length) {
+  				  toBuy +=( String( items[i].innerHTML, 10 ) + "<br>" );
+   				 i++;
+			}
+			document.writeln(toBuy);
 		}
 
 	</script>
