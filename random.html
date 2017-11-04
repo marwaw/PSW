@@ -50,9 +50,10 @@
 		<p id="your_recipe"> </p>
 		<script>
 			document.getElementById("random-btn").addEventListener("click", getRandomRecipe);
+			var maxVal = 5;
 
 			function getRandomRecipe() {
-				var rand = Math.floor(Math.random() * 5);
+				var rand = Math.floor(Math.random() * maxVal);
 				var recipe = " ";
 
 				switch (rand) {
