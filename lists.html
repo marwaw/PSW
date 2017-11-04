@@ -45,12 +45,14 @@
 		</ul>
 	</nav>
 	<script type="text/javascript">
-		window.addEventListener("resize", functionWindow,false);
+		window.addEventListener("load", functionWindow,false);
 
 		function functionWindow(){
-			window.alert("Zmieniono rozmiar okna. ");
+			window.alert("Strona jest już gotowa :) ");
 		}
+
 	</script>
+
 	
 	<div class = "page-content">
 	<section id="post">
@@ -66,20 +68,18 @@
 		
 			<aside><p>Autorem tego przepisu jest Martyna wielka smakoszka murzynków!</p></aside>
 
-			<img src="images/cake.jpg" width = "480" height = "360" alt = "Zdjęcie ciasta"/>
+			<img src="images/cake.jpg" width = "480" height = "360" alt = "Zdjęcie ciasta" id="photo" />
 
 			<p>Ten przepis jest oceniany na: 
 			0 <meter min = "0"
             max = "20"
             value = "17" id="meter"></meter> 20
-
-
 			</p>
-		
-			<details>
-			<summary><strong>Składniki:</strong></summary>
+	
+			<details id="ingredients" onclick="countIngredients()">
+			<summary ><strong>Składniki:</strong></summary>
 
-			<ul>
+			<ul id ="ingredientsList">
 				<li>1 kostka masła/margaryny</li>
 				<li>1,5 szklanki cukru</li>
 				<li>4-5 łyżek kako</li>
@@ -112,6 +112,19 @@
 
 			<p>Smacznego! </p>
 
+		<script type="text/javascript">
+		function countIngredients(){ 
+			var ing = document.getElementById("ingredientsList");
+			 var items = ing.getElementsByTagName("li");
+			 var sum = 0;
+
+			for (var i = 0; i < items.length; ++i) {
+  				sum+=1;
+			}
+			window.alert("Ten przepis ma " + sum + " składników");
+		}
+
+	</script>
 		</article>
 
 		<button id="download-btn"><a href = "przepis.txt" download>Pobierz przepis</a></button>
