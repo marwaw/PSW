@@ -87,7 +87,7 @@
           </label>
        </p>
        <p id="borderstretch">
-          <input type = "submit" value = "Wyślij" onclick="promptFunction()" />
+          <input type = "submit" value = "Wyślij" onclick="noRobotFunction2()" />
           <input type = "reset" value = "Wyczyść" />
        </p>   
        <p></p>
@@ -98,13 +98,13 @@
 	</footer>
 
   <script>
-    function promptFunction() {
-    var imie = prompt("Jak masz na imię?", "Babeczka");
-    if (imie != "") {
-      window.alert("Dziękujemy, " + imie+ " !");
+    function noRobotFunction2() {
+    var wynik = parseFloat(prompt("Podaj wynik: 1.5 + 1.7"));
+    if (wynik == 3.2) {
+      window.alert("Dziękujemy, nie jesteś robotem!");
     }
     else{
-      window.alert("Dziękujemy nieznajomy!");
+      window.alert("Coś jest nie tak...");
     }
 }
 </script>
