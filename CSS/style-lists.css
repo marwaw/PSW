@@ -111,6 +111,20 @@ p {
             column-rule: 1px outset pink;
          }      }
 
+.multicolumns2  {
+            -webkit-column-count: 3; 
+            -moz-column-count: 3; 
+            -o-column-count: 3;
+            column-count: 3;
+            -webkit-column-gap: 10px;
+            -moz-column-gap: 10px; 
+            -o-column-gap: 10px; 
+            column-gap: 10px;
+            -webkit-column-rule: 1px outset pink; 
+            -moz-column-rule: 1px outset pink; 
+            -o-column-rule: 1px outset pink; 
+            column-rule: 1px outset pink;
+         }
 
 
 

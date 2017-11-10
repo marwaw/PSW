@@ -23,17 +23,17 @@ input:nth-last-child(2){ color: MidnightBlue;}
 
 input:nth-last-child(1){ color: MediumPurple;}
 
-    #borderstretch {
-    border: 10px solid transparent;
-    padding: 15px;
-    border-image-source: url(../images/border.png);
-    border-image-slice: 15% 10%;
-    border-image-repeat:  stretch;}
-
     #borderrepeat {
     border: 10px solid transparent;
     padding: 15px;
     border-image-source: url(../images/border.png);
     border-image-slice: 16% 16%;
     border-image-repeat:  repeat;}
+
+    #borderstretch {
+    border: 10px solid transparent;
+    padding: 15px;
+    border-image-source: url(../images/border.png);
+    border-image-slice: 15% 10%;
+    border-image-repeat:  stretch;}
 

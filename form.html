@@ -48,7 +48,7 @@
 	<h2>Formularz</h2>
 	<p>Wypełnienie tego formularza zajmie Ci tylko chwilę, a dzięki niemu będziemy mogły rozwijać tę stronę.</p>
 
-	<form method = "post" action = "www.example.com" autocomplete="on">
+	<form>
 
 	    <p><label>Imię:
 	        <input name = "name" type = "text" size = "25" maxlength = "30" autofocus> (np. Karol)
@@ -140,7 +140,7 @@
           </label></p>
 
 	    <p>
-	       <input type = "submit" value = "Wyślij" onclick = "noRobotFunction()" >
+	       <input id="submit-btn" type = "button" value = "Wyślij" onclick = "noRobotFunction()" >
 	       <input type = "reset" value = "Wyczyść" >
 	    </p>   
     </form>
@@ -153,12 +153,24 @@
   <script>
       function noRobotFunction() {
         var counter = 1;
+        var correct = false;
       
       do {
           var wynik = parseInt(prompt("Podaj wynik: 123 + 11"));
-          ++counter;
+          if (wynik == 134) {
+            correct = true;
+            window.alert("wysłane");
+          }
+          else {
+            ++counter;
+          }
       }
-      while (wynik != 134 & counter <= 3);
+      while (!correct & counter <= 3);
+
+      if (!correct) {
+        window.alert("Coś jest nie tak...");
+      }
+      
     }
     </script>
   </body>
