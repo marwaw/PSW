@@ -2,7 +2,6 @@ header h1 {
     background-color: hsla(330, 42%, 50%, 0.50);
 }
 
-
 input[type=text] {
     width: 80px;
 }
@@ -31,4 +30,8 @@ div{
      background-origin: border-box, content-box;
      background-repeat: no-repeat, repeat;
 
+}
+
+#help {
+    color: red;
 }

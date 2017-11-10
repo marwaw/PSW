@@ -48,19 +48,20 @@
   <div class = "page-content">
 	<h2>Formularz</h2>
 	<p>Wypełnienie tego formularza zajmie Ci tylko chwilę, a dzięki niemu będziemy mogły rozwijać tę stronę.</p>
+  <p id = "help"> </p>
 
 	<form>
 
 	    <p><label>Imię:
-	        <input name = "name" type = "text" size = "25" maxlength = "30" autofocus> (np. Karol)
+	        <input name = "name" type = "text" size = "25" maxlength = "30" id = "name" autofocus > (np. Karol)
 	    </label></p>
 
       <p><label>Nazwisko:
-          <input name = "surname" type = "text" size = "25" maxlength = "30" required> (np. Kowalski)
+          <input name = "surname" type = "text" size = "25" maxlength = "30" id = "surname" required> (np. Kowalski)
       </label></p>
 
       <p><label for = "txtList"> Miesiąc urodzenia:
-          <input type = "text" id ="txtList" list = "months">
+          <input type = "text" list = "months" id = "birthMonth">
           <datalist id = "months">
             <option value = "Styczeń">
             <option value = "Luty">
@@ -78,17 +79,17 @@
       </label></p>
 
 	    <p><label>Email: 
-            <input name = "email" type = "email"  size = "25" required> (np. karol@domena.com)
+            <input name = "email" type = "email"  size = "25" id = "email" required> (np. karol@domena.com)
          </label></p>
 
 
       <p><label>Tel:
-            <input type = "tel" pattern = "\d{3}-\d{3}-\d{3}" disabled="disabled" /> (np. 111-111-111)
+            <input type = "tel" pattern = "\d{3}-\d{3}-\d{3}" id = "phone" disabled="disabled" /> (np. 111-111-111)
           </label></p>
 
 	    <p>
           <label>Wiek: 
-            <select name = "age">
+            <select name = "age" id = "age">
               <option  disabled="disabled"> &lt; 0 </option>
               <option selected> 0-18 </option>
               <option>18-24</option>
@@ -140,7 +141,7 @@
 
 	    <p>
 	       <input id="submit-btn" type = "button" value = "Wyślij" onclick = "noRobotFunction()" >
-	       <input type = "reset" value = "Wyczyść" >
+	       <input id = "reset" type = "reset" value = "Wyczyść" >
 	    </p>   
     </form>
     

@@ -1,9 +1,9 @@
-window.addEventListener("load", init, false);
+var thanks;
 
 function init(){
 	document.getElementById("download-btn").addEventListener("click", displayThanks);
 	thanks = document.getElementById('thanks');
-	functionWindow();
+	//functionWindow();
 }
 
 function functionWindow(){
@@ -40,4 +40,4 @@ function displayThanks() {
 	thanks.innerHTML = 'Dziękujemy za pobranie przepisu!';
 }
 
-
+window.addEventListener("load", init, false);
