@@ -21,6 +21,12 @@ function init() {
    registerListeners(document.getElementById( "age" ), 5 );
    registerListeners(document.getElementById( "submit-btn" ), 6 );
    registerListeners(document.getElementById( "reset" ), 7 );
+
+   var feedback = document.getElementById("feedback-form");
+
+   //feedback.addEventListener("submit", noRobotFunction, false);
+   feedback.addEventListener("submit", function() {return confirm("Czy na pewno chcesz wysłać formularz?")}, false);
+   feedback.addEventListener("reset", function() {return confirm("Czy na pewno chcesz wyczyścić formularz?")}, false);
 }
 
 function registerListeners( object, messageNumber )

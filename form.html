@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
   <link rel = "stylesheet" type = "text/css" href = "CSS/style.css">
   <link rel = "stylesheet" type = "text/css" href = "CSS/style-form.css">
-  <script src="JS/form-script.js"></script>
+  <script src="JS/zad5.js"></script>
 </head>
 
 <body>
@@ -50,7 +50,7 @@
 	<p>Wypełnienie tego formularza zajmie Ci tylko chwilę, a dzięki niemu będziemy mogły rozwijać tę stronę.</p>
   <p id = "help"> </p>
 
-	<form>
+	<form id="feedback-form" action="">
 
 	    <p><label>Imię:
 	        <input name = "name" type = "text" size = "25" maxlength = "30" id = "name" autofocus > (np. Karol)
@@ -140,7 +140,7 @@
           </label></p>
 
 	    <p>
-	       <input id="submit-btn" type = "button" value = "Wyślij" onclick = "noRobotFunction()" >
+	       <input id="submit-btn" type = "submit" value = "Wyślij">
 	       <input id = "reset" type = "reset" value = "Wyczyść" >
 	    </p>   
     </form>
