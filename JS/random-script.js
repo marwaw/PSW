@@ -1,5 +1,9 @@
-document.getElementById("random-btn").addEventListener("click", getRandomRecipe);
 var maxVal = 5;
+
+function init() {
+	your_recipe = document.getElementById( "your_recipe" );
+	document.getElementById("random-btn").addEventListener("click", getRandomRecipe);
+}
 
 //tu też cos nie dziala
 function getRandomRecipe() {
@@ -14,5 +18,7 @@ function getRandomRecipe() {
 		case 4: recipe = "Dziś nie jedz słodkiego!"; break;
 		default: recipe = " ";
 	}
-	document.getElementById("your_recipe").innerHTML = "Twój przepis: " + recipe;
+	your_recipe.innerHTML = "Twój przepis: " + recipe;
 }
+
+window.addEventListener("load", init, false);

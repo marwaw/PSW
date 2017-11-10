@@ -1,4 +1,10 @@
-window.addEventListener("load", functionWindow,false);
+window.addEventListener("load", init, false);
+
+function init(){
+	document.getElementById("download-btn").addEventListener("click", displayThanks);
+	thanks = document.getElementById('thanks');
+	functionWindow();
+}
 
 function functionWindow(){
 	window.alert("Strona jest już gotowa :) ");
@@ -29,10 +35,9 @@ function ListIngredients(){
 }
 
 // to nie dziala jak jest w osobnym pliku, nie wiem dlaczego
-document.getElementById("download-btn").addEventListener("click", displayThanks);
 
 function displayThanks() {
-	document.getElementById('thanks').innerHTML = 'Dziękujemy za pobranie przepisu!';
+	thanks.innerHTML = 'Dziękujemy za pobranie przepisu!';
 }
 
 
