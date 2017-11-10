@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
     <link rel = "stylesheet" type = "text/css" href = "CSS/style.css">
    <link rel = "stylesheet" type = "text/css" href = "CSS/style-lists.css">
-
+   <script src="JS/lists-script.js"></script>
 </head>
 
 <body>
@@ -44,15 +44,6 @@
 			</li>
 		</ul>
 	</nav>
-	<script type="text/javascript">
-		window.addEventListener("load", functionWindow,false);
-
-		function functionWindow(){
-			window.alert("Strona jest już gotowa :) ");
-		}
-
-	</script>
-
 	
 	<div class = "page-content">
 	<section id="post">
@@ -116,43 +107,10 @@
 			<p><button id="buy-btn" onclick="ListIngredients()">Lista Składników</button></p>
 			<p>Smacznego! </p>
 
-		<script type="text/javascript">
-		function countIngredients(){ 
-			var ing = document.getElementById("ingredientsList");
-			 var items = ing.getElementsByTagName("li");
-			 var sum = 0;
-
-			for (var i = 0; i < items.length; ++i) {
-  				sum+=1;
-			}
-			window.alert("Ten przepis ma " + sum + " składników");
-		}
-
-		function ListIngredients(){ 
-			var ing = document.getElementById("ingredientsList");
-			var items = ing.getElementsByTagName("li");
-			var toBuy = "Do kupienia:" + "<br>";
-			var i=0;
-			while (i < items.length) {
-  				  toBuy +=( String( items[i].innerHTML, 10 ) + "<br>" );
-   				 i++;
-			}
-			document.writeln(toBuy);
-		}
-
-	</script>
 		</article>
 
 		<button id="download-btn"><a href = "przepis.txt" download>Pobierz przepis</a></button>
       	<p id="thanks"> </p>
-
-      	<script>
-		   	document.getElementById("download-btn").addEventListener("click", displayThanks);
-
-			function displayThanks() {
-			   document.getElementById('thanks').innerHTML = 'Dziękujemy za pobranie przepisu!';
-			}
-   		</script>
 
 		<p><a href = "http://www.bloblo.pl/image/336388/default/murzynek%2Bw%2Bczekoladzie%5B1%5D.jpg" download>Pobierz zdjęcie</a></p>
 		</section>

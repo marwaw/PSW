@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
     <link rel = "stylesheet" type = "text/css" href = "CSS/style.css">
     <link rel = "stylesheet" type = "text/css" href = "CSS/style-index.css">
+    <script src="JS/random-script.js"></script>
 </head>
 <body>
 	<header>
@@ -48,25 +49,7 @@
 		<p>Nie wiesz co dziś upiec? Wylosuj sobie ciasto!</p>
 		<button id="random-btn">Losuj</button>
 		<p id="your_recipe"> </p>
-		<script>
-			document.getElementById("random-btn").addEventListener("click", getRandomRecipe);
-			var maxVal = 5;
-
-			function getRandomRecipe() {
-				var rand = Math.floor(Math.random() * maxVal);
-				var recipe = " ";
-
-				switch (rand) {
-					case 0: recipe = "Murzynek"; break;
-					case 1: recipe = "Tort"; break;
-					case 2: recipe = "Sernik"; break;
-					case 3: recipe = "Muffinki"; break;
-					case 4: recipe = "Dziś nie jedz słodkiego!"; break;
-					default: recipe = " ";
-				}
-				document.getElementById("your_recipe").innerHTML = "Twój przepis: " + recipe;
-			}
-		</script>
+		
 	</div>
 <footer>
     &copy;2017 Martyna i Ada

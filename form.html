@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
   <link rel = "stylesheet" type = "text/css" href = "CSS/style.css">
   <link rel = "stylesheet" type = "text/css" href = "CSS/style-form.css">
+  <script src="JS/form-script.js"></script>
 </head>
 
 <body>
@@ -85,8 +86,6 @@
             <input type = "tel" pattern = "\d{3}-\d{3}-\d{3}" disabled="disabled" /> (np. 111-111-111)
           </label></p>
 
-
-
 	    <p>
           <label>Wiek: 
             <select name = "age">
@@ -150,28 +149,5 @@
     &copy;2017 Martyna i Ada
   </footer>
 
-  <script>
-      function noRobotFunction() {
-        var counter = 1;
-        var correct = false;
-      
-      do {
-          var wynik = parseInt(prompt("Podaj wynik: 123 + 11"));
-          if (wynik == 134) {
-            correct = true;
-            window.alert("wysłane");
-          }
-          else {
-            ++counter;
-          }
-      }
-      while (!correct & counter <= 3);
-
-      if (!correct) {
-        window.alert("Coś jest nie tak...");
-      }
-      
-    }
-    </script>
   </body>
 </html>
