@@ -3,86 +3,80 @@
 
 <head>
 	<meta charset = "utf-8">
-	<title>Tryb edycji</title>
-	<meta name = "keywords" content = "recipe, cake, cocoa">
-    <meta name = "description" content = "Przepis na ciasto Murzynek">
+	<title>Planer</title>
+	<meta name = "keywords" content = "plan, shopping">
+    <meta name = "description" content = "Strona do planowania">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
     <link rel = "stylesheet" type = "text/css" href = "CSS/style.css">
-   <link rel = "stylesheet" type = "text/css" href = "CSS/style-lists.css">
-   <link rel = "stylesheet" type = "text/css" href = "CSS/edit-style.css">
+    <link rel = "stylesheet" type = "text/css" href = "CSS/edit-style.css">
    <script src="JS/zad1.js"></script>
 </head>
 
 <body>
+	<header>
+		<h1>PRZEPIŚNIK</h1>
+	</header>
+
+	<nav>Menu
+		<ul class = "first-level">
+			<li><a href="index.html">Strona główna</a></li>
+			<li>Kontakt
+				<ul class = "second-level">
+					<li><a href="kontakt.html">Napisz do nas</a></li>
+					<li>Formularze	
+						<ul class = "third-level">
+							<li><a href="form.html">Feedback</a></li>
+							<li><a href="form2.html">Formularz</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>Przydatne
+				<ul class = "second-level">
+					<li>Tabele 
+						<ul class = "third-level">
+							<li><a href="tables.html">Przelicznik</a></li>
+						</ul>
+					</li>
+					<li><a href="herbs.html">Zioła</a></li>
+					<li><a href="random.html">Wylosuj przepis</a></li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+	
 	<div class = "page-content">
-		<h3> Tryb edycji</h3>
-	<section id="post">
+		<h3 id = "title"> Stwórz swoją listę </h3>
+		<div id = "your-place">
+			
+		</div>
 
-		<article id = "article1">[article1]
-			<h3 id = "title" class = "highlighted">[title] Przepis </h3>
-			<p id = "para1">[para1] Przepis na przepyszne ciasto, mocno kakaowe i mocno wilgotne. Pyszny <em>Murzynek</em>!</p>
-
-			<article id = "article2"> [article2]
-				<p id ="para2"> [para2] <span class="extra">Ciekawostka:</span><br/><strong>Czekolada w Europie</strong></p > 
-				  <p id = "para3"> [para3] Pierwszym Europejczykiem, któremu ok. 1502 r. dane było spróbować czekolady, był Krzysztof Kolumb. Napój jednak go nie zachwycił – był bowiem wyjątkowo pikantny i gorzki. Ziarna kakaowca pojawiły się w Hiszpanii w 1528 r. za sprawą konkwistadora Hernána Cortésa. Pierwsi Europejczycy, którzy pijali kakaowy napój, doprawiali go cukrem i wanilią – aromatyczne dodatki spowodowały, że stał się ich przysmakiem.  Czekoladowy smakołyk królował na hiszpańskim dworze. Potem pojawił się we Francji – miało to miejsce na początku XVII wieku, za sprawą hiszpańskiej księżniczki Anny, małżonki Ludwika XIII. </p>
-				</article>
-
-			<article id = "article3"> [article3]
-			<p id = "para4"> [para4] Nasiona kakaowca właściwego początkowo były wykorzystywane przez Majów do produkcji napoju dla najbogatszych o nazwie Xococalit z nahuatl xocolatl IPA – gorzka woda). Napój ten był również wykorzystywany podczas modłów i odpraw rytualnych. Xococalit był przyrządzany z roztartych ziaren kakaowca z miodem, chili bądź z kukurydzą. W celu uzyskania pianki przelewali napój z naczynia do naczynia.</p></article>
-
-			<aside><p id = "para5"> [para4] Autorem tego przepisu jest Martyna wielka smakoszka murzynków!</p></aside>
-
-			<summary id = "summary1" >[summary1] <strong>Składniki:</strong></summary>
-
-			<ul id ="ingredientsList"> [ingredientsList]
-				<li id = "item1">[item1] 1 kostka masła/margaryny</li>
-				<li id = "item2">[item2] 1,5 szklanki cukru</li>
-				<li id = "item3">[item3] 4-5 łyżek kakao</li>
-				<li id = "item4">[item4] 1/2 szklanki wody</li>
-				<li id = "item5">[item5] 1 aromat np. rumowy </li>
-				<li id = "item6">[item6] 2 szklanki mąki</li>
-				<li id = "item7">[item7] 4 jaja</li>
-				<li id = "item8">[item8] 2-3 łyżeczki proszku do pieczenia</li>
-			</ul>
-
-			<summary id = "summary2"><strong>[summary2] Wykonanie:</strong></summary>
-
-			<ol id = "toDo"> [toDo]
-				<li>Gotujemy
-					<ul>
-						<li>mąkę</li>
-						<li>wodę</li>
-						<li>cukier</li>
-						<li>kakao</li>
-					</ul></li>
-				<li>Pół szklanki powstałej masy odkładamy na polewę.</li>
-				<li>Do reszty dodajemy jajka i miksujemy.</li>
-				<li>Dodajemy resztę składników i mieszamy łyżką.</li>
-				<li>Pieczemy w 170 stopniach przez ok. 40 minut</li>
-				<li>Gdy polewa stężeje polewamy nią ostudzone ciasto.</li>
-			</ol>
-
-			<p id = "para6">[para6] Smacznego! </p>
-		</article>
-		</section>
-
-		<div id = "navv" class = "navv">
+		<div id = "nav" class = "nav">
          <form action = "#">
-            <p><input type = "text" id = "gbi" value = "title">
+            <p><input type = "text" id = "gbi">
                <input type = "button" value = "Znajdz po id"
                   id = "byIdButton"></p>
+
+            <p><input type = "text" id = "insTitle">
+               <input type = "button" value = "Wstaw tytuł"
+                  id = "insertListButton"></p>
+
             <p><input type = "text" id = "ins">
-               <input type = "button" value = "Wstaw przed"
+               <input type = "button" value = "Wstaw element przed"
                   id = "insertButton"></p>
+
             <p><input type = "text" id = "append">
-               <input type = "button" value = "Dodaj potomka"
+               <input type = "button" value = "Dodaj pozycję do listy"
                   id = "appendButton"></p>
+
             <p><input type = "text" id = "replace">
                <input type = "button" value = "Zamień zaznaczony"
                   id = "replaceButton"></p>
+
             <p><input type = "button" value = "Usuń zaznaczony"
                   id = "removeButton"></p>
-            <p><input type = "button" value = "Przejdź do rodzica"
+
+            <p><input type = "button" value = "Przejdź wyżej"
                   id = "parentButton"></p>
          </form>
       </div>

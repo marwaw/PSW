@@ -6,6 +6,8 @@ function start()
 {
    document.getElementById( "byIdButton" ).addEventListener(
       "click", byId, false );
+   document.getElementById( "insertListButton" ).addEventListener(
+      "click", insertList, false );
    document.getElementById( "insertButton" ).addEventListener(
       "click", insert, false );
    document.getElementById( "appendButton" ).addEventListener(
@@ -18,7 +20,7 @@ function start()
       "click", parent, false );
 
    // initialize currentNode
-   currentNode = document.getElementById( "title" );
+   currentNode = document.getElementById( "your-place" );
 } // end function start
 
 // call start after the window loads
@@ -34,11 +36,23 @@ function byId()
       switchTo( target );
 } // end function byId
 
-// insert a paragraph element before the current element
+// insert an element before the current element
+// using the insertBefore method
+function insertList()
+{
+   var newNode = createNewNode("h3", document.getElementById( "insTitle" ).value );
+   document.getElementById( "your-place" ).appendChild( newNode);
+
+   var newList = createNewNode("ol", "");
+   document.getElementById( "your-place" ).appendChild(newList);
+   switchTo(newList);
+} // end function insert
+
+// insert an element before the current element
 // using the insertBefore method
 function insert()
 {
-   var newNode = createNewNode(document.getElementById( "ins" ).value );
+   var newNode = createNewNode("li", document.getElementById( "ins" ).value );
    currentNode.parentNode.insertBefore( newNode, currentNode );
    switchTo( newNode );
 } // end function insert
@@ -46,7 +60,7 @@ function insert()
 // append a paragraph node as the child of the current node
 function appendNode()
 {
-   var newNode = createNewNode(
+   var newNode = createNewNode("li",
       document.getElementById( "append" ).value );
    currentNode.appendChild( newNode );
    switchTo( newNode );
@@ -55,7 +69,7 @@ function appendNode()
 // replace the currently selected node with a paragraph node
 function replaceCurrent()
 {
-   var newNode = createNewNode(
+   var newNode = createNewNode("p",
       document.getElementById( "replace" ).value );
    currentNode.parentNode.replaceChild( newNode, currentNode );
    switchTo( newNode );
@@ -64,7 +78,7 @@ function replaceCurrent()
 // remove the current node
 function remove()
 {
-   if ( currentNode.parentNode == document.getElementById( "post" ) )
+   if ( currentNode == document.getElementById( "your-place" ) )
       alert( "Can't remove a top-level element." );
    else
    {
@@ -77,19 +91,17 @@ function remove()
 // get and highlight the parent of the current node
 function parent()
 {
-   var target = currentNode.parentNode;
-
-   if ( target != document.getElementById( "post" ))
-      switchTo( target );
-   else
+   if (currentNode == document.getElementById( "your-place" ) )
       alert( "No parent." );
+   else 
+      switchTo(currentNode.parentNode);
 } // end function parent
 
 // helper function that returns a new paragraph node containing
 // a unique id and the given text
-function createNewNode( text )
+function createNewNode(type, text )
 {
-   var newNode = document.createElement( "p" );
+   var newNode = document.createElement( type );
    nodeId = "new" + idcount;
    ++idcount;
    newNode.setAttribute( "id", nodeId ); // set newNode's id
