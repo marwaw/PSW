@@ -52,7 +52,7 @@ function insertList()
 // using the insertBefore method
 function insert()
 {
-   var newNode = createNewNode("li", document.getElementById( "ins" ).value );
+   var newNode = createNewNode("p", document.getElementById( "ins" ).value );
    currentNode.parentNode.insertBefore( newNode, currentNode );
    switchTo( newNode );
 } // end function insert
@@ -63,13 +63,12 @@ function appendNode()
    var newNode = createNewNode("li",
       document.getElementById( "append" ).value );
    currentNode.appendChild( newNode );
-   switchTo( newNode );
 } // end function appendNode
 
 // replace the currently selected node with a paragraph node
 function replaceCurrent()
 {
-   var newNode = createNewNode("p",
+   var newNode = createNewNode("li",
       document.getElementById( "replace" ).value );
    currentNode.parentNode.replaceChild( newNode, currentNode );
    switchTo( newNode );
