@@ -86,13 +86,14 @@ nav:hover >.first-level {
 /* FOOTER */
 footer {
     text-align: center;
-    position: fixed;
+    position: relative;
+    /*position: fixed;
     left: 0;
     bottom: 0;
-    margin: 0;
+    margin: 0;*/
     padding: 5px;
     width: 100%;
-    z-index: 3;
+    /*z-index: 3;*/
 
     background: #efabeb; /* Old Browsers */
     background: -webkit-linear-gradient(top,#efabeb,#6f676e); /*Safari 5.1-6*/
