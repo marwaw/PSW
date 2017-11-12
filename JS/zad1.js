@@ -4,6 +4,7 @@ var idcount = 0; // used to assign a unique id to new elements
 // register event handlers and initialize currentNode
 function start()
 {
+    
    document.getElementById( "byIdButton" ).addEventListener(
       "click", byId, false );
    document.getElementById( "insertListButton" ).addEventListener(
