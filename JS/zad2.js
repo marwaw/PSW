@@ -8,6 +8,8 @@ function init() {
 	links = document.links;
 	imgSources =  document.getElementById("images");
 	linksSources = document.getElementById("links");
+  anchorsNumber = document.getElementById("anchors");
+  countAnchors();
 	document.getElementById( "imgSrcBtn" ).addEventListener(
       "click", getImageSrc, false );
 	document.getElementById( "linksBtn" ).addEventListener(
@@ -32,5 +34,16 @@ function getLinks() {
     }
    linksSources.innerHTML = contents;
 }
+
+function countAnchors() {
+     var x = document.anchors.length;
+     anchorsNumber.innerHTML = x;
+}
+//dlaczego wyswietla 0????
+
+// function myFunction() {
+//     var x = document.forms.namedItem("myCarForm").innerHTML;
+//     document.getElementById("demo").innerHTML = x;
+// }
 
 window.addEventListener("load", init, false);

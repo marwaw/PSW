@@ -10,6 +10,7 @@
   <link rel = "stylesheet" type = "text/css" href = "CSS/style.css">
   <link rel = "stylesheet" type = "text/css" href = "CSS/style-form.css">
   <script src="JS/zad5.js"></script>
+  <script src="JS/zad4.js"></script>
 </head>
 
 <body>
@@ -45,7 +46,7 @@
     </ul>
   </nav>
   
-  <div class = "page-content">
+  <div class = "page-content" onclick="showCoords(event)">
 	<h2>Formularz</h2>
 	<p>Wypełnienie tego formularza zajmie Ci tylko chwilę, a dzięki niemu będziemy mogły rozwijać tę stronę.</p>
   <p id = "help"> </p>
@@ -144,8 +145,11 @@
 	       <input id = "reset" type = "reset" value = "Wyczyść" >
 	    </p>   
     </form>
-    
+    <p>tu jesteś:<br/>
+    <span id="coords"></span></p>
   </div>
+
+
   <footer>
     &copy;2017 Martyna i Ada
   </footer>
