@@ -8,6 +8,8 @@
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
     <link rel = "stylesheet" type = "text/css" href = "CSS/style.css">
     <link rel = "stylesheet" type = "text/css" href = "CSS/style-index.css">
+      <script src="JS/zad4.js"></script>
+
 </head>
 <body>
 	<header>
@@ -58,8 +60,10 @@
 		<article>
 			<h3>Murzynek1</h3>
 			<a href = "lists.html"> <img  src = "images/cake.jpg" width = "200"  
-		               height = "200" alt = "Zdjęcie ciasta" id="img1"></a>
-		    <p class="recipe">Przepis na przepyszne ciasto, mocno kakaowe i mocno wilgotne. Pyszny <em>Murzynek</em>!</p>
+		               height = "200" alt = "Zdjęcie ciasta" id="img1" onmouseover="clickme()" 
+		               onmouseout="visitme()"></a>
+		    <p class="recipe">Przepis na przepyszne ciasto, mocno kakaowe i mocno wilgotne. Pyszny <em>Murzynek</em>!
+		    <br/><span id = "id1"></span></p>
 	    </article>
 
 	    <article>

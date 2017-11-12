@@ -11,6 +11,7 @@
     <link rel = "stylesheet" type = "text/css" href = "CSS/style.css">
     <link rel = "stylesheet" type = "text/css" href = "CSS/style-index.css">
     <script src="JS/random-script.js"></script>
+     <script src="JS/zad4.js"></script>
 </head>
 <body>
 	<header>
@@ -45,11 +46,12 @@
 		</ul>
 	</nav>
 
-	<div class = "page-content">
+	<div class = "page-content" >
 		<p>Nie wiesz co dziś upiec? Wylosuj sobie ciasto!<br/>Wpisz znak:</p>
 		<input type="text" size="40" onkeypress="getRandom(event)">
 		<p id="your_recipe"> </p>
-		
+		<p onmousedown="isKeyPressed(event)">Chcesz zmienić kolor tej strony? Kliknij przytrzymując jeden z klawiszy Ctrl, Alt, Shift :)</p>
+
 	</div>
 <footer>
     &copy;2017 Martyna i Ada
