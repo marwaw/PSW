@@ -2,23 +2,29 @@ var maxVal = 5;
 
 function init() {
 	your_recipe = document.getElementById( "your_recipe" );
-	document.getElementById("random-btn").addEventListener("click", getRandomRecipe);
 }
 
 //tu też cos nie dziala
-function getRandomRecipe() {
-	var rand = Math.floor(Math.random() * maxVal);
+function getRandomRecipe(nr) {
+	var rand = (nr%5);
 	var recipe = " ";
+	var choice="";
 
 	switch (rand) {
-		case 0: recipe = "Murzynek"; break;
-		case 1: recipe = "Tort"; break;
-		case 2: recipe = "Sernik"; break;
-		case 3: recipe = "Muffinki"; break;
-		case 4: recipe = "Dziś nie jedz słodkiego!"; break;
-		default: recipe = " ";
+		case 0: recipe = choice="Murzynek"; break;
+		case 1: recipe = choice="Tort"; break;
+		case 2: recipe = choice="Sernik"; break;
+		case 3: recipe = choice="Muffinki"; break;
+		case 4: recipe = choice="Dziś nie jedz słodkiego!"; break;
+		default: recipe = choice=" ";
 	}
-	your_recipe.innerHTML = "Twój przepis: " + recipe;
+	recipe = your_recipe.innerHTML = "Twój przepis: " +choice;
+	
+}
+
+function getRandom(event) {
+    var x = event.which || event.keyCode;
+     getRandomRecipe(x);
 }
 
 window.addEventListener("load", init, false);
