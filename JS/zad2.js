@@ -28,7 +28,7 @@ function getLinks() {
     var i;
 
     for (i = 0; i < links.length; i++) {
-        contents +=  "<li><a href = '" + links[i].href + "'>" + links[i].innerHTML + "</li>";
+        contents +=  "<li><a href = '" + links.item(i).href + "'>" + links.item(i).innerHTML + "</li>";
     }
    linksSources.innerHTML = contents;
 }
