@@ -9,6 +9,7 @@ var helpTexts = [ "Tutaj wpisz swoje imie",
   "Ten przycisk czyści cały formularz",
    "" ];
 
+// register listeners, event handlers and initialize variables
 function init() {
   help = document.getElementById("help");
 
@@ -25,9 +26,12 @@ function init() {
    var feedback = document.getElementById("feedback-form");
 
    //feedback.addEventListener("submit", noRobotFunction, false);
-   feedback.addEventListener("submit", function() {return confirm("Czy na pewno chcesz wysłać formularz?")}, false);
+   feedback.addEventListener("submit", function() {return confirm(getUserName() +", czy na pewno chcesz wysłać formularz?")}, false);
    feedback.addEventListener("reset", function() {return confirm("Czy na pewno chcesz wyczyścić formularz?")}, false);
 }
+
+// call init after the window loads
+window.addEventListener( "load", init, false );
 
 function registerListeners( object, messageNumber )
 {
@@ -59,5 +63,3 @@ function noRobotFunction() {
   }
   
 }
-
-window.addEventListener( "load", init, false );
