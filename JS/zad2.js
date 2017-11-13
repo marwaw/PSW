@@ -1,14 +1,17 @@
-var images;
-var links;
+var images; //collection of all images from a current site
+var links; //collection of all links from a current site
 var imgSources;
-var linksSources;
+var linksSources; 
 
+// register event handlers and initialize variables
 function init() {
 	images = document.images;
 	links = document.links;
+
 	imgSources =  document.getElementById("images");
 	linksSources = document.getElementById("links");
   anchorsNumber = document.getElementById("anchors");
+
   countAnchors();
 	document.getElementById( "imgSrcBtn" ).addEventListener(
       "click", getImageSrc, false );
@@ -16,23 +19,26 @@ function init() {
       "click", getLinks, false );
 }
 
+// call init after the window loads
+window.addEventListener("load", init, false); 
+
+// get sources of all images and set the text
 function getImageSrc() {
-    var txt = "";
+    var txt = "<ul>";
     var i;
     for (i = 0; i < images.length; i++) {
-        txt = txt +  images[i].src + "<br>";
+        txt += "<li>" + images.item(i).src + "</li>";
     }
    imgSources.innerHTML = txt;
 }
 
+// get source links
 function getLinks() {
-    var contents = "<ul>";
-    var i;
+  var contents = "";
 
-    for (i = 0; i < links.length; i++) {
-        contents +=  "<li><a href = '" + links.item(i).href + "'>" + links.item(i).innerHTML + "</li>";
-    }
-   linksSources.innerHTML = contents;
+  contents +=  "<a href = '" + links.namedItem('source1').href + "'>" + links.namedItem('source1').innerHTML + "<br>";
+  contents +=  "<a href = '" + links.namedItem('source2').href + "'>" + links.namedItem('source2').innerHTML + "<br>";
+  linksSources.innerHTML = contents;
 }
 
 function countAnchors() {
@@ -46,4 +52,3 @@ function countAnchors() {
 //     document.getElementById("demo").innerHTML = x;
 // }
 
-window.addEventListener("load", init, false);
