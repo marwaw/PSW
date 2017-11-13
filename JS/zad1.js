@@ -37,8 +37,7 @@ function byId()
       switchTo( target );
 } // end function byId
 
-// insert an element before the current element
-// using the insertBefore method
+// insert a new list and its name using the appendChild method
 function insertList()
 {
    var newNode = createNewNode("h3", document.getElementById( "insTitle" ).value );
@@ -49,7 +48,7 @@ function insertList()
    switchTo(newList);
 } // end function insert
 
-// insert an element before the current element
+// insert an note before the current element
 // using the insertBefore method
 function insert()
 {
@@ -58,7 +57,7 @@ function insert()
    switchTo( newNode );
 } // end function insert
 
-// append a paragraph node as the child of the current node
+// append a new list element as the child of the current list
 function appendNode()
 {
    var newNode = createNewNode("li",
@@ -66,7 +65,7 @@ function appendNode()
    currentNode.appendChild( newNode );
 } // end function appendNode
 
-// replace the currently selected node with a paragraph node
+// replace the currently selected node with a li node
 function replaceCurrent()
 {
    var newNode = createNewNode("li",
@@ -79,7 +78,7 @@ function replaceCurrent()
 function remove()
 {
    if ( currentNode == document.getElementById( "your-place" ) )
-      alert( "Can't remove a top-level element." );
+      alert( "Nie możesz usunąć tego elementu." );
    else
    {
       var oldNode = currentNode;
@@ -92,7 +91,7 @@ function remove()
 function parent()
 {
    if (currentNode == document.getElementById( "your-place" ) )
-      alert( "No parent." );
+      alert( "Brak rodzica" );
    else 
       switchTo(currentNode.parentNode);
 } // end function parent
