@@ -17,20 +17,16 @@ switch(font) {
   function colours(colour){
 switch(colour) {
     case 1:              
-           document.body.setAttribute( "style", 
-      "background-color: blue" ); 
+           document.body.style.backgroundColor="blue";
         break;
     case 2:
-           document.body.setAttribute( "style", 
-      "background-color: magenta" ); 
+           document.body.style.backgroundColor="magenta";
         break;
     case 3:
-           document.body.setAttribute( "style", 
-      "background-color: cyan"); 
+           document.body.style.backgroundColor="cyan";
         break;
     default:
-           document.body.setAttribute( "style", 
-      "background-color: white" ); 
+           document.body.style.backgroundColor="white"; 
     }
   }
 
