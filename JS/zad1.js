@@ -2,9 +2,7 @@ var currentNode; // stores the currently highlighted node
 var idcount = 0; // used to assign a unique id to new elements
 
 // register event handlers and initialize currentNode
-function start()
-{
-    
+function start(){  
    document.getElementById( "byIdButton" ).addEventListener(
       "click", byId, false );
    document.getElementById( "insertListButton" ).addEventListener(
@@ -28,8 +26,7 @@ function start()
 window.addEventListener( "load", start, false );
 
 // get and highlight an element by its id attribute
-function byId()
-{
+function byId(){
    var id = document.getElementById( "gbi" ).value;
    var target = document.getElementById( id );
 
@@ -38,8 +35,7 @@ function byId()
 } // end function byId
 
 // insert a new list and its name using the appendChild method
-function insertList()
-{
+function insertList(){
    var newNode = createNewNode("h3", document.getElementById( "insTitle" ).value );
    document.getElementById( "your-place" ).appendChild( newNode);
 
@@ -50,24 +46,21 @@ function insertList()
 
 // insert an note before the current element
 // using the insertBefore method
-function insert()
-{
+function insert(){
    var newNode = createNewNode("p", document.getElementById( "ins" ).value );
    currentNode.parentNode.insertBefore( newNode, currentNode );
    switchTo( newNode );
 } // end function insert
 
 // append a new list element as the child of the current list
-function appendNode()
-{
+function appendNode(){
    var newNode = createNewNode("li",
       document.getElementById( "append" ).value );
    currentNode.appendChild( newNode );
 } // end function appendNode
 
 // replace the currently selected node with a li node
-function replaceCurrent()
-{
+function replaceCurrent(){
    var newNode = createNewNode("li",
       document.getElementById( "replace" ).value );
    currentNode.parentNode.replaceChild( newNode, currentNode );
@@ -75,8 +68,7 @@ function replaceCurrent()
 } // end function replaceCurrent
 
 // remove the current node
-function remove()
-{
+function remove(){
    if ( currentNode == document.getElementById( "your-place" ) )
       alert( "Nie możesz usunąć tego elementu." );
    else
@@ -88,8 +80,7 @@ function remove()
 } // end function remove
 
 // get and highlight the parent of the current node
-function parent()
-{
+function parent(){
    if (currentNode == document.getElementById( "your-place" ) )
       alert( "Brak rodzica" );
    else 
@@ -98,8 +89,7 @@ function parent()
 
 // helper function that returns a new paragraph node containing
 // a unique id and the given text
-function createNewNode(type, text )
-{
+function createNewNode(type, text ){
    var newNode = document.createElement( type );
    nodeId = "new" + idcount;
    ++idcount;
@@ -110,8 +100,7 @@ function createNewNode(type, text )
 } // end function createNewNode
 
 // helper function that switches to a new currentNode
-function switchTo( newNode )
-{
+function switchTo( newNode ){
    currentNode.setAttribute( "class", "" ); // remove old highlighting
    currentNode = newNode;
    currentNode.setAttribute( "class", "highlighted" ); // highlight

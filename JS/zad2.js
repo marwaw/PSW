@@ -45,10 +45,5 @@ function countAnchors() {
      var x = document.anchors.length;
      anchorsNumber.innerHTML = x;
 }
-//dlaczego wyswietla 0????
 
-// function myFunction() {
-//     var x = document.forms.namedItem("myCarForm").innerHTML;
-//     document.getElementById("demo").innerHTML = x;
-// }
 
