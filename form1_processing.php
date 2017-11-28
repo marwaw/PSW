@@ -54,5 +54,24 @@
             print( "<p>Ada też urodziłą się w marcu ;)</p>" );
             ?>
          </p> 
+          <p>
+            <?php  
+            define("AMOUNT", 10);
+            $a = AMOUNT*5+6;
+            $a += ++$a;
+            //print(gettype($a));
+            settype($a, "string"); 
+            //print(gettype($a));
+            print("To dla Ciebie się rozwijamy! Na początku było tu tylko " . (string)AMOUNT ." przepisow. Teraz jest ich aż " . $a ." !");
+            ?>
+         </p> 
+         <p>
+            <?php  
+         $ip = $_SERVER['REMOTE_ADDR'] ;
+         print("Adres ip z którego został wysłany ten formularz to $ip <br/>");
+         $req = $_SERVER['REQUEST_METHOD'] ;
+         print("Metoda przesłania parametrów formularza to $req");
+            ?>
+         </p> 
    </body>
 </html>
