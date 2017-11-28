@@ -9,9 +9,9 @@
   <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
   <link rel = "stylesheet" type = "text/css" href = "CSS/style.css">
   <link rel = "stylesheet" type = "text/css" href = "CSS/style-form.css">
-  <script src="JS/zad5.js"></script>
+  <!--<script src="JS/zad5.js"></script>
   <script src="JS/zad4.js"></script>
-  <script src="JS/zad2-forms.js"></script>
+  <script src="JS/zad2-forms.js"></script>-->
 </head>
 
 <body>
@@ -53,18 +53,18 @@
 	<p>Wypełnienie tego formularza zajmie Ci tylko chwilę, a dzięki niemu będziemy mogły rozwijać tę stronę.</p>
   <p id = "help"> </p>
 
-	<form id="feedback-form" action="">
+	<form id="feedback-form" method="post" action="form1_processing.php">
 
 	    <p><label>Imię:
 	        <input name = "name" type = "text" size = "25" maxlength = "30" id = "name" autofocus > (np. Karol)
 	    </label></p>
 
       <p><label>Nazwisko:
-          <input name = "surname" type = "text" size = "25" maxlength = "30" id = "surname" required> (np. Kowalski)
+          <input name = "surname" type = "text" size = "25" maxlength = "30" id = "surname" > (np. Kowalski)
       </label></p>
 
       <p><label for = "txtList"> Miesiąc urodzenia:
-          <input type = "text" list = "months" id = "birthMonth">
+          <input type = "text" list = "months" id = "birthMonth" name="month">
           <datalist id = "months">
             <option value = "Styczeń">
             <option value = "Luty">
@@ -82,18 +82,18 @@
       </label></p>
 
 	    <p><label>Email: 
-            <input name = "email" type = "email"  size = "25" id = "email" required> (np. karol@domena.com)
+            <input name = "email" type = "email"  size = "25" id = "email" > (np. karol@domena.com)
          </label></p>
 
 
       <p><label>Tel:
-            <input type = "tel" pattern = "\d{3}-\d{3}-\d{3}" id = "phone" disabled="disabled" /> (np. 111-111-111)
+            <input type = "tel"  id = "phone" name="tel" /> (np. (111-111-111)
           </label></p>
 
 	    <p>
           <label>Wiek: 
             <select name = "age" id = "age">
-              <option  disabled="disabled"> &lt; 0 </option>
+              <option  > &lt; 0 </option>
               <option selected> 0-18 </option>
               <option>18-24</option>
               <option>25-35</option>
