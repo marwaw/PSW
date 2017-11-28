@@ -11,6 +11,7 @@
    </head>
    <body>
       <?php
+      // checking phone number
          if (!preg_match( "/^\([0-9]{3}-[0-9]{3}-[0-9]{3}\)$/", 
             $_POST["tel"]))
          {
@@ -84,7 +85,7 @@
       <p><?php
          $comment = $_POST["comments"];
 
-         //checking if there are words beginning with 'brzydk' and then changing them 
+         //checking if there are words beginning with 'brzydk' and then changing them   
          if (preg_match( "/brzydk[[:alpha:]]/", $comment)){
             print("Twoj komentarz bardzo nas zasmucił, następnym razem rozważ napisanie:");
             while (preg_match( "/\b(brzydk[[:alpha:]]+)\b/i", $comment, $match ) ){
