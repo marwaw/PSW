@@ -17,19 +17,7 @@
             print( "<p class = 'error'>Niepoprawny format numeru telefonu.</p></body></html>" );
             die(); 
          }
-      ?><!-- end PHP script -->
-    <!--  <p>Hi <?php print( $_POST["fname"] ); ?>. Thank you for 
-         completing the survey. You have been added to the 
-         <?php print( $_POST["book"] ); ?> mailing list.</p>
-      <p class = "head">The following information has been saved 
-         in our database:</p>
-      <p>Name: <?php print( $_POST["fname"] ); 
-         print( $_POST["lname"] ); ?></p>
-      <p>Email: <?php print( $_POST["email"] ); ?></p>
-      <p>Phone: <?php print( $_POST["phone"] ); ?></p>
-      <p>OS: <?php print( $_POST["os"] ); ?></p>
-      <p class = "head">This is only a sample form.       
-         You have not been added to a mailing list mmmm.</p> -->
+      ?>
          <p>
             <?php  
 
@@ -59,10 +47,9 @@
             define("AMOUNT", 10);
             $a = AMOUNT*5+6;
             $a += ++$a;
-            //print(gettype($a));
             settype($a, "string"); 
-            //print(gettype($a));
             print("To dla Ciebie się rozwijamy! Na początku było tu tylko " . (string)AMOUNT ." przepisow. Teraz jest ich aż " . $a ." !");
+
             ?>
          </p> 
          <p>
