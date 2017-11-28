@@ -17,19 +17,7 @@
             print( "<p class = 'error'>Niepoprawny format numeru telefonu.</p></body></html>" );
             die(); 
          }
-      ?><!-- end PHP script -->
-    <!--  <p>Hi <?php print( $_POST["fname"] ); ?>. Thank you for 
-         completing the survey. You have been added to the 
-         <?php print( $_POST["book"] ); ?> mailing list.</p>
-      <p class = "head">The following information has been saved 
-         in our database:</p>
-      <p>Name: <?php print( $_POST["fname"] ); 
-         print( $_POST["lname"] ); ?></p>
-      <p>Email: <?php print( $_POST["email"] ); ?></p>
-      <p>Phone: <?php print( $_POST["phone"] ); ?></p>
-      <p>OS: <?php print( $_POST["os"] ); ?></p>
-      <p class = "head">This is only a sample form.       
-         You have not been added to a mailing list mmmm.</p> -->
+      ?>
          <p>
             <?php  
 
@@ -73,5 +61,25 @@
          print("Metoda przesłania parametrów formularza to $req");
             ?>
          </p> 
+
+         <p><?php
+            print("Wpisane przez Ciebie dane:");
+            for( reset($_POST); $element = key($_POST); next($_POST)){
+               
+               if (is_array($_POST["$element"])){
+                  print("$element: </p>");
+                  $array = $_POST["$element"];
+                  for ( $i = 0; $i < count( $array ); ++$i )
+                  print( "<p>-$array[$i]</p>");
+               }
+               else
+                  print("<p> $element : $_POST[$element]</p>");
+            }
+            
+
+
+         ?></p>
+
+
    </body>
 </html>
