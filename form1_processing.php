@@ -54,13 +54,5 @@
             print( "<p>Ada też urodziłą się w marcu ;)</p>" );
             ?>
          </p> 
-         <p>
-            <?php  
-            if(( $_POST["month"]) == "Lipiec" )
-            print( "<p>Martyna też urodziłą się w lipcu ;)</p>" );
-         elseif(( $_POST["month"]) == "Marzec" )
-            print( "<p>Ada też urodziłą się w marcu ;)</p>" );
-            ?>
-         </p> 
    </body>
 </html>
