@@ -60,5 +60,25 @@
          print("Metoda przesłania parametrów formularza to $req");
             ?>
          </p> 
+
+         <p><?php
+            print("Wpisane przez Ciebie dane:");
+            for( reset($_POST); $element = key($_POST); next($_POST)){
+               
+               if (is_array($_POST["$element"])){
+                  print("$element: </p>");
+                  $array = $_POST["$element"];
+                  for ( $i = 0; $i < count( $array ); ++$i )
+                  print( "<p>-$array[$i]</p>");
+               }
+               else
+                  print("<p> $element : $_POST[$element]</p>");
+            }
+            
+
+
+         ?></p>
+
+
    </body>
 </html>

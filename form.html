@@ -56,11 +56,11 @@
 	<form id="feedback-form" method="post" action="form1_processing.php">
 
 	    <p><label>Imię:
-	        <input name = "name" type = "text" size = "25" maxlength = "30" id = "name" autofocus > (np. Karol)
+	        <input name = "name" type = "text" size = "25" maxlength = "30" id = "name" autofocus required> (np. Karol)
 	    </label></p>
 
       <p><label>Nazwisko:
-          <input name = "surname" type = "text" size = "25" maxlength = "30" id = "surname" > (np. Kowalski)
+          <input name = "surname" type = "text" size = "25" maxlength = "30" id = "surname"> (np. Kowalski)
       </label></p>
 
       <p><label for = "txtList"> Miesiąc urodzenia:
@@ -81,8 +81,8 @@
           </datalist> (np. Maj)
       </label></p>
 
-	    <p><label>Email: 
-            <input name = "email" type = "email"  size = "25" id = "email" > (np. karol@domena.com)
+	    <p><label>Email:
+            <input name = "email" type = "email"  size = "25" id = "email"> (np. karol@domena.com)
          </label></p>
 
 
@@ -121,19 +121,19 @@
 
         <p>Jakie przepisy interesowałyby Cię najbardziej?<br>
           <label>Desery
-            <input name = "wanted" type = "checkbox" 
+            <input name = "wanted[]" type = "checkbox" 
               value = "Dessert"></label>
           <label>Obiady
-            <input name = "wanted" type = "checkbox" 
+            <input name = "wanted[]" type = "checkbox" 
               value = "Lunch"></label>
           <label>Sezonowe
-            <input name = "wanted" type = "checkbox" 
+            <input name = "wanted[]" type = "checkbox" 
               value = "Season"></label> 
           <label>Śniadania
-            <input name = "wanted" type = "checkbox" 
+            <input name = "wanted[]" type = "checkbox" 
               value = "Breakfast"></label>
           <label>Przekąski
-            <input name = "wanted" type = "checkbox" 
+            <input name = "wanted[]" type = "checkbox" 
               value = "Snack"></label>
         </p>
 
