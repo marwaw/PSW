@@ -37,9 +37,9 @@
          <p>
             <?php  
             if(( $_POST["month"]) == "Lipiec" )
-            print( "<p>Martyna też urodziłą się w lipcu ;)</p>" );
-         elseif(( $_POST["month"]) == "Marzec" )
-            print( "<p>Ada też urodziłą się w marcu ;)</p>" );
+               print( "<p>Martyna też urodziłą się w lipcu ;)</p>" );
+            elseif(( $_POST["month"]) == "Marzec" )
+               print( "<p>Ada też urodziłą się w marcu ;)</p>" );
             ?>
          </p> 
           <p>
@@ -47,10 +47,13 @@
             define("AMOUNT", 10);
             $a = AMOUNT*5+6;
             $a += ++$a;
-            //print(gettype($a));
+            // print(gettype($a));
             settype($a, "string"); 
             //print(gettype($a));
             print("To dla Ciebie się rozwijamy! Na początku było tu tylko " . (string)AMOUNT ." przepisow. Teraz jest ich aż " . $a ." !");
+            print("<p>Przed zmianą: " . gettype($a) . "</p>");
+            $a = 5.5;
+            print("<p>Po zmianie: " . gettype($a) . "</p>");
             ?>
          </p> 
          <p>
