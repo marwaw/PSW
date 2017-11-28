@@ -65,7 +65,7 @@
          <p><?php
             print("Wpisane przez Ciebie dane:");
             for( reset($_POST); $element = key($_POST); next($_POST)){
-               
+
                if (is_array($_POST["$element"])){
                   print("$element: </p>");
                   $array = $_POST["$element"];
@@ -75,11 +75,17 @@
                else
                   print("<p> $element : $_POST[$element]</p>");
             }
-            
-
-
          ?></p>
 
-
+         <p><?php
+            $comment = $_POST["comments"];
+            if (preg_match( "/brzydk[[:space:][:alpha:]]/", $comment)){
+               print("Twoj komentarz bardzo nas zasmucił, następnym razem rozważ napisanie:");
+               while (preg_match( "/\b(brzydk[[:alpha:]]+)\b/i", $comment, $match ) ){
+                  $comment = preg_replace("/" . $match[ 1 ] . "/", "ładna", $comment);
+               }
+               print("<p>$comment</p>");
+            }
+            ?></p>
    </body>
 </html>
