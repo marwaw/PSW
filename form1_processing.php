@@ -42,6 +42,28 @@
             print( "<p>Martyna też urodziłą się w lipcu ;)</p>" );
          elseif(( $_POST["month"]) == "Marzec" )
             print( "<p>Ada też urodziłą się w marcu ;)</p>" );
+<<<<<<< HEAD
+            ?>
+         </p> 
+          <p>
+            <?php  
+            define("AMOUNT", 10);
+            $a = AMOUNT*5+6;
+            $a += ++$a;
+            settype($a, "string"); 
+            print("To dla Ciebie się rozwijamy! Na początku było tu tylko " . (string)AMOUNT ." przepisow. Teraz jest ich aż " . $a ." !");
+
+            ?>
+         </p> 
+         <p>
+            <?php  
+         $ip = $_SERVER['REMOTE_ADDR'] ;
+         print("Adres ip z którego został wysłany ten formularz to $ip <br/>");
+         $req = $_SERVER['REQUEST_METHOD'] ;
+         print("Metoda przesłania parametrów formularza to $req");
+            ?>
+         </p> 
+=======
          ?>
       </p> 
        <p>
@@ -70,6 +92,7 @@
       <p><?php
          print("Wpisane przez Ciebie dane:");
          for( reset($_POST); $element = key($_POST); next($_POST)){
+>>>>>>> cf8bb3d1028e42027fefad1cad93c14060fc65a1
 
             if (is_array($_POST["$element"])){
                print("$element: </p>");
