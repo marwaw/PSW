@@ -20,8 +20,7 @@
          }
       ?>
 
-      <p><?php  
-
+      <p><?php
          $months = array(  
          "Styczeń"   => "brownie",   "Luty" => "szarlotkę",
          "Marzec"     => "miętową czekoladę",   "Kwiecień"    => "mazurek",
@@ -32,14 +31,14 @@
 
          foreach ( $months as $element => $value )
             if(strcmp( $_POST["month"], "$element" ) == 0)
-         print( "<p>Twój miesiąc urodzenia to: $element, może masz ochotę na $value ?" . "</p>" );
+               print( "<p>Twój miesiąc urodzenia to: $element, może masz ochotę na $value ?" . "</p>" );
          ?></p>  
 
       <p><?php  
          if(( $_POST["month"]) == "Lipiec" )
-            print( "<p>Martyna też urodziłą się w lipcu ;)</p>" );
+            print( "<p>Martyna też urodziła się w lipcu ;)</p>" );
          elseif(( $_POST["month"]) == "Marzec" )
-            print( "<p>Ada też urodziłą się w marcu ;)</p>" );
+            print( "<p>Ada też urodziła się w marcu ;)</p>" );
       ?></p>
 
       <p><?php  
@@ -80,7 +79,7 @@
          $comment = $_POST["comments"];
 
          //checking if there are words beginning with 'brzydk' and then changing them   
-         if (preg_match( "/brzydk[[:alpha:]]/", $comment)){
+         if (preg_match( "/brzydk[[:alpha:]]/i", $comment)){
             print("Twoj komentarz bardzo nas zasmucił, następnym razem rozważ napisanie:");
             while (preg_match( "/\b(brzydk[[:alpha:]]+)\b/i", $comment, $match ) ){
                $comment = preg_replace("/" . $match[ 1 ] . "/", "ładna", $comment);
