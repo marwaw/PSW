@@ -6,7 +6,7 @@
    <head>
       <meta charset = "utf-8">
       <title>Wrr</title>
-      <link rel="stylesheet" type="text/css" href="test.php" />
+      <link rel="stylesheet" type="text/css" href="style_cookies.php" />
       <link rel = "stylesheet" type = "text/css" href = "CSS/style.css">
       
       
@@ -16,7 +16,7 @@
 
         <nav> Menu
                 <ul class = "first-level">
-                    <li><a href="index.html">Strona główna</a></li>
+                    <li><a href="index.php">Strona główna</a></li>
                     <li>Kontakt
                         <ul class = "second-level">
                             <li><a href="kontakt.html">Napisz do nas</a></li>
@@ -38,8 +38,7 @@
                             <li><a href="herbs.html">Zioła</a></li>
                             <li><a href="random.html">Wylosuj przepis</a></li>
                             <li><a href="makeList.html">Twoja lista</a></li>
-                            <li><a href="test.html">Zmien wygląd strony</a></li>
-                            <li><a href="test.html">Zmien wygląd strony</a></li>                            
+                            <li><a href="style_changes.html">Zmien wygląd strony</a></li>                            
                         </ul>
                     </li>
                 </ul>
@@ -49,11 +48,13 @@
         
 <p
       <h2>Wybierz wygląd:</h2>   
-      <form method = "post" action = "changes.php"> 
+      <form method = "post" action = "style_changes.php"> 
          <div><label>Kolor tla:</label> 
-            <input type = "text" name = "bg_col"><div>
+            <input type = "color" name = "bg_col"><div>
          <div><label>Kolor czcionki:</label>
-            <input type = "text" name = "font_col"></div>
+            <input type = "color" name = "font_col"></div>
+            <div><label>Rozmiar czcionki:</label>
+                <input type = "text" name = "font_size"></div>
          <p><input type = "submit" value = "Zapisz styl">
       </form></p>
 

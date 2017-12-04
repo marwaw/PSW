@@ -8,7 +8,8 @@
 	<meta charset = "utf-8">
 	<title>Przepiśnik strona główna</title>
 	<meta name = "Main" content = " cooking, recipee, baking, dinner, dessert, salads, food">
-    <meta name = "description" content = "Ta strona dotyczy gotowania, jest to blog kulinarny, zawiera przepisy.">
+	<meta name = "description" content = "Ta strona dotyczy gotowania, jest to blog kulinarny, zawiera przepisy.">
+	<link rel="stylesheet" type="text/css" href="style_cookies.php" />
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
     <link rel = "stylesheet" type = "text/css" href = "CSS/style.css">
     <link rel = "stylesheet" type = "text/css" href = "CSS/style-index.css">
@@ -56,6 +57,7 @@ print("<p><a href='logout.php'> Logout</a></p>");
 					<li><a href="herbs.html">Zioła</a></li>
 					<li><a href="random.html">Wylosuj przepis</a></li>
 					<li><a href="makeList.html">Twoja lista</a></li>
+					<li><a href="style_changes.html">Zmien wygląd strony</a></li>                            
 				</ul>
 			</li>
 		</ul>

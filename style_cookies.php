@@ -16,12 +16,19 @@ if(isset($_COOKIE['font_col'])){
 else{
     $font_col = "black";
 }
+
+if(isset($_COOKIE['font_size'])){
+    $font_size = $_COOKIE['font_size'] . "%";
+}
+else{
+    $font_size = "100%";
+}
 ?>
 
 body {
 
    background-color: <?=$bg_col?>;
-   font-size: 105%;
+   font-size: <?=$font_size?>;
    color : <?=$font_col?>;;
 }
 

@@ -6,8 +6,8 @@
    <head>
       <meta charset = "utf-8">
       <title>Zapisane ciasteczka</title>  
-      <link rel="stylesheet" type="text/css" href="test.php" />
-
+      <link rel="stylesheet" type="text/css" href="style_cookies.php" />
+      
    </head>
    <body>
       <p>Zapisane ciasteczka:</p>
@@ -17,7 +17,7 @@
          foreach ($_COOKIE as $key => $value )
             print( "<p>$key: $value</p>" );
       ?><!-- end PHP script -->
-    <p> <a href = "index.html">Powrót</a></p>
+    <p> <a href = "index.php">Powrót</a></p>
 
    </body>
 </html>
