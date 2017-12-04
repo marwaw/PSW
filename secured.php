@@ -1,4 +1,5 @@
-<?php 
+<?php
+session_start();
 	if(isset($_SESSION['user']))
 		{
 		    header("location:form.html");
@@ -8,5 +9,4 @@
 		header("location: log.html");
 		exit();
 	}
-
-?> 
+	?>
