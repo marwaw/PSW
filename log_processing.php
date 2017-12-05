@@ -1,28 +1,30 @@
 <?php
     session_start();
 
-    if (isset($_SESSION['use'])){
-        header("location:index.php");
-    }
+    $users = array(
+        "kucharzyk" => "lubiemurzynki11",
+        "blaszka" => "smalecimaslo",
+        "admin" => "admin"
+    );
+
+//    if (isset($_COOKIE['user'])){
+//        header("location:index.php");
+//    }
 
     if (isset($_POST['user'])){
         $user = $_POST['user'];
         $pass = $_POST['pass'];
 
-        if ($user == 'user' && $pass == '1234') {
-            $_SESSION['use'] = $user;
+        if (isset($users[$user]) && $users[$user] == $pass) {
+            $_SESSION['user'] = $user;
             $_SESSION['timeout'] = time();
-//            $_SESSION['username'] = 'user';
             setcookie("user", "$user");
             setcookie("session_id", "user_logged");
-            echo '<script type="text/javascript"> window.open("index.php", "_self");</script>';
-//            header("location:index.html");
-//            exit();
+            $where = $_SESSION['request'];
+            header("location:$where");
         }
         else {
             header('Location: log.php');
-//            exit();
-//            echo "invalid username or password";
         }
 
     }

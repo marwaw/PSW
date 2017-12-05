@@ -28,7 +28,7 @@
 					<li><a href="kontakt.html">Napisz do nas</a></li>
 					<li>Formularze	
 						<ul class = "third-level">
-							<li><a href="form.html">Feedback</a></li>
+							<li><a href="form.php">Feedback</a></li>
 							<li><a href="form2.html">Formularz</a></li>
 						</ul>
 					</li>

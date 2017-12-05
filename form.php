@@ -20,14 +20,14 @@
 <body>
 
 <?php
-    if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Page
-    {
-        $_SESSION['request'] = "page2.php";
+    if(!isset($_SESSION['user'])) {
+        $_SESSION['request'] = "form.php";
         header("Location:log.php");
     }
-    $USER = $_SESSION['use'];
+
+    $USER = $_SESSION['user'];
     print("<p>User: $USER</p>");
-print("<p><a href='logout.php'> Logout</a></p>");
+    print("<p><a href='logout.php'> Logout</a></p>");
 ?>
 
   <header>
@@ -36,13 +36,13 @@ print("<p><a href='logout.php'> Logout</a></p>");
 
   <nav> Menu
     <ul class = "first-level">
-      <li><a href="index.html">Strona główna</a></li>
+      <li><a href="index.php">Strona główna</a></li>
       <li>Kontakt
         <ul class = "second-level">
           <li><a href="kontakt.html">Napisz do nas</a></li>
           <li>Formularze  
             <ul class = "third-level">
-              <li><a href="form.html">Feedback</a></li>
+              <li><a href="form.php">Feedback</a></li>
               <li><a href="form2.html">Formularz</a></li>
             </ul>
           </li>
