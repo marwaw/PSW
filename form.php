@@ -23,7 +23,7 @@
     if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Page
     {
         $_SESSION['request'] = "page2.php";
-        header("Location:Login.html");
+        header("Location:log.php");
     }
     $USER = $_SESSION['use'];
     print("<p>User: $USER</p>");
