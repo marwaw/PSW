@@ -7,9 +7,9 @@
         "admin" => "admin"
     );
 
-//    if (isset($_COOKIE['user'])){
-//        header("location:index.php");
-//    }
+    if (isset($_COOKIE['user'])){
+        header("location:index.php");
+    }
 
     if (isset($_POST['user'])){
         $user = $_POST['user'];
