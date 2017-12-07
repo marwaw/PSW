@@ -1,21 +1,35 @@
-<?php 
-	session_start();
+<?php
+    session_start();
 ?>
 
 <!DOCTYPE html>
 <html>
 <head> <!-- niewyswietlane info o stronie-->
 	<meta charset = "utf-8">
-	<title>Menu</title>
+	<title>Wylosuj</title>
 	<meta name = "keywords" content = "web page, design,  
          HTML5, tutorial, personal, help, index, form, 
          contact, feedback, list, links, deitel">
-    <meta name = "description" content = "oPIS Strony">
+	<meta name = "description" content = "Strona do losowania przepisu">
+	<link rel="stylesheet" type="text/css" href="style_cookies.php" />	
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
     <link rel = "stylesheet" type = "text/css" href = "CSS/style.css">
     <link rel = "stylesheet" type = "text/css" href = "CSS/style-index.css">
+    <script src="JS/random-script.js"></script>
+     <script src="JS/zad4.js"></script>
 </head>
 <body>
+
+    <?php
+        if(!isset($_COOKIE['user'])){
+            $_SESSION['request'] = 'random.php';
+            header("Location:log.php");
+        }
+
+        $USER = $_COOKIE['user'];
+        print("<p>User: $USER</p>");
+        print("<p><a href='logout.php'> Logout</a></p>");
+    ?>
 	<header>
 		<h1>PRZEPIŚNIK</h1>
 	</header>
@@ -50,24 +64,13 @@
         </ul>
     </nav>
 
-<div class = "page-content">
+	<div class = "page-content" >
+		<p>Nie wiesz co dziś upiec? Wylosuj sobie ciasto!<br/>Wpisz znak:</p>
+		<input type="text" size="40" onkeypress="getRandom(event)">
+		<p id="your_recipe"> </p>
+		<p onmousedown="isKeyPressed(event)">Chcesz zmienić kolor tej strony? Kliknij przytrzymując jeden z klawiszy Ctrl, Alt, Shift :)</p>
 
-	<form id="log-form" method="post" action="log_processing.php">
-		<h4></h4>
-		<p><label>Login:
-            <input name = "user" type = "text"  size = "25" required>
-        </label></p>
-
-      	<p><label>Hasło:
-            <input name="pass" type = "password" required>
-        </label></p>
-
-      <p>
-       <input name="login" type = "submit" value = "Wyślij">
-       <input id = "reset" type = "reset" value = "Wyczyść" >
-    </p> 
-	</form>
-</div>
+	</div>
 <footer>
     &copy;2017 Martyna i Ada
 </footer>

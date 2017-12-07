@@ -1,7 +1,3 @@
-<?php
-	session_start();
-?>
-
 <!DOCTYPE html>
 <html>
 <head> 
@@ -17,16 +13,6 @@
 
 </head>
 <body>
-<?php
-    if(!isset($_COOKIE['user'])){
-    $_SESSION['request'] = 'index.php';
-    header("Location:log.php");
-    }
-
-    $USER = $_COOKIE['user'];
-    print("<p>User: $USER</p>");
-    print("<p><a href='logout.php'> Logout</a></p>");
-?>
 
 	<header>
 		<h1>PRZEPIŚNIK</h1>
@@ -40,8 +26,7 @@
 					<li><a href="kontakt.html">Napisz do nas</a></li>
 					<li>Formularze	
 						<ul class = "third-level">
-							<!--<li><a href="secured.php">Feedback</a></li>-->
-							 <li><a href="form.php">Feedback</a></li>
+                            <li><a href="form.php">Feedback</a></li>
 							<li><a href="form2.html">Formularz</a></li>
 						</ul>
 					</li>
@@ -51,12 +36,12 @@
 				<ul class = "second-level">
 					<li>Tabele 
 						<ul class = "third-level">
-							<li><a href="tables.html">Przelicznik</a></li>
+							<li><a href="tables.php">Przelicznik</a></li>
 						</ul>
 					</li>
-					<li><a href="herbs.html">Zioła</a></li>
-					<li><a href="random.html">Wylosuj przepis</a></li>
-					<li><a href="makeList.html">Twoja lista</a></li>
+					<li><a href="herbs.php">Zioła</a></li>
+					<li><a href="random.php">Wylosuj przepis</a></li>
+					<li><a href="makeList.php">Twoja lista</a></li>
 					<li><a href="style_changes.html">Zmien wygląd strony</a></li>                            
 				</ul>
 			</li>

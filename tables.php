@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -13,39 +17,49 @@
 </head>
 
 <body>
+    <?php
+        if(!isset($_COOKIE['user'])){
+            $_SESSION['request'] = 'tables.php';
+            header("Location:log.php");
+        }
+
+        $USER = $_COOKIE['user'];
+        print("<p>User: $USER</p>");
+        print("<p><a href='logout.php'> Logout</a></p>");
+    ?>
    <header>
     <h1>PRZEPIŚNIK</h1>
   </header>
 
-  <nav> Menu
-    <ul class = "first-level">
-      <li><a href="index.php">Strona główna</a></li>
-      <li>Kontakt
-        <ul class = "second-level">
-          <li><a href="kontakt.html">Napisz do nas</a></li>
-          <li>Formularze  
-            <ul class = "third-level">
-              <li><a href="form.php">Feedback</a></li>
-              <li><a href="form2.html">Formularz</a></li>
-            </ul>
-          </li>
+    <nav> Menu
+        <ul class = "first-level">
+            <li><a href="index.php">Strona główna</a></li>
+            <li>Kontakt
+                <ul class = "second-level">
+                    <li><a href="kontakt.html">Napisz do nas</a></li>
+                    <li>Formularze
+                        <ul class = "third-level">
+                            <li><a href="form.php">Feedback</a></li>
+                            <li><a href="form2.html">Formularz</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>Przydatne
+                <ul class = "second-level">
+                    <li>Tabele
+                        <ul class = "third-level">
+                            <li><a href="tables.php">Przelicznik</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="herbs.php">Zioła</a></li>
+                    <li><a href="random.php">Wylosuj przepis</a></li>
+                    <li><a href="makeList.php">Twoja lista</a></li>
+                    <li><a href="style_changes.html">Zmien wygląd strony</a></li>
+                </ul>
+            </li>
         </ul>
-      </li>
-      <li>Przydatne
-        <ul class = "second-level">
-          <li>Tabele 
-            <ul class = "third-level">
-              <li><a href="tables.html">Przelicznik</a></li>
-            </ul>
-          </li>
-          <li><a href="herbs.html">Zioła</a></li>
-          <li><a href="random.html">Wylosuj przepis</a></li>
-          <li><a href="makeList.html">Twoja lista</a></li>
-          <li><a href="style_changes.html">Zmien wygląd strony</a></li>                            
-        </ul>
-      </li>
-    </ul>
-  </nav>
+    </nav>
    
   <div class = "page-content">
 	<table class = "table-convert">
