@@ -48,6 +48,15 @@
 
 <div class = "page-content">
     <?php
+    $login = isset($_POST[ "login" ]) ? $_POST[ "login" ] : "";
+    $password = isset($_POST[ "password" ]) ? $_POST[ "password" ] : "";
+    $first_name = isset($_POST[ "first_name" ]) ? $_POST[ "first_name" ] : "";
+    $last_name = isset($_POST[ "last_name" ]) ? $_POST[ "last_name" ] : "";
+    $email = isset($_POST[ "email" ]) ? $_POST[ "email" ] : "";
+    $phone = isset($_POST[ "phone" ]) ? $_POST[ "phone" ] : "";
+
+    $is_error = false;
+
     // array of name values for the text input fields
     $inputlist = array( "login" => "Login", "password" => "Hasło", "first_name" => "Imię",
         "last_name" => "Nazwisko", "email" => "Email",
@@ -64,14 +73,54 @@
     foreach ( $inputlist as $inputname => $inputalt )
     {
         print( "<div><label>$inputalt:</label><input type = 'text'
-               name = '$inputname' value = ''>" );
+               name = '$inputname' value = '" . $$inputname . "'>" );
         print( "</div>" );
     }
 
     print( "<p><input type = 'submit' name = 'submit'
             value = 'GOTOWE'></p></form></body></html>" );
 
+    if (isset( $_POST["submit"])){
+        if ( $login == "" ) {
+            $iserror = true;
+        }
+        //TO DO: sprawdzenie poprawności wpisanych wartości
+        // może zapisanie jaki to rodzaj błędu
 
+        if(!$is_error){
+            $data_base = mysqli_connect("localhost", "root1", "pass");
+            $query = "INSERT INTO users (Login, Password, LastName, FirstName, Email,Phone) VALUES ('$login', '$password', '$first_name', '$last_name', '$email', '$phone')";
+            //sprawdź czy jest połączenie z bazą danych
+            if (!$data_base)
+                die("<p> Nie można się połączyć z bazą danych!</p></body></html>");
+
+            // otwórz bazę danych
+            if (!mysqli_select_db($data_base, "PSW_DB"))
+                die("<p> Nie można otworzyć bazy danych PSW_DB</p></body></html>");
+
+//        For successful SELECT, SHOW, DESCRIBE, or EXPLAIN queries mysqli_query will return a mysqli_result object.
+//        For other successful queries it will return TRUE. FALSE on failure
+            $result = mysqli_query( $data_base, $query);
+            if (!$result){
+                print( "<p>Nie mozna wykonac działania!</p>" );
+                die( mysqli_error($data_base) );
+            }
+
+            mysqli_close( $data_base );
+
+            print( "<p>Cześć $first_name, dzięki za rejestracje!</p>
+          <p>The following information has been 
+             saved in our database:</p>
+          <p>Login: $login</p>
+          <p>Imię i nazwisko: $first_name $last_name</p>
+          <p>Email: $email</p>
+          <p>Telefon: $phone</p>
+          </body></html>" );
+            die();
+    }
+
+
+    }
 
     ?>
 </div>
