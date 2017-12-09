@@ -7,8 +7,8 @@ USE PSW_DB;
 CREATE TABLE users
 (
    ID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-   Login varchar(30),
-   Password varchar(30),
+   Login varchar(30) NOT NULL,
+   Password varchar(30) NOT NULL,
    LastName varchar(30),
    FirstName varchar(30),
    Email varchar(64),
