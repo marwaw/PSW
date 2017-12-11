@@ -33,7 +33,7 @@
         }
         else {
             mysqli_close( $data_base );
-            
+
             $_SESSION['user'] = $user;
             $_SESSION['timeout'] = time();
             setcookie("user", "$user");

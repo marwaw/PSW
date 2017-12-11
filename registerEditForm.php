@@ -82,7 +82,7 @@
 
     if (isset( $_POST["submit"])){
         if ( $login == "" ) {
-            $iserror = true;
+            $is_error = true;
         }
         //TO DO: sprawdzenie poprawności wpisanych wartości
         // może zapisanie jaki to rodzaj błędu
@@ -117,9 +117,7 @@
           <p>Telefon: $phone</p>
           </body></html>" );
             die();
-    }
-
-
+        }
     }
 
     ?>
