@@ -58,15 +58,7 @@
         $user = $_SESSION["user"];
         $query = "SELECT login, password, LastName, FirstName, email, phone FROM users WHERE login = '$user'";
 
-        $data_base = mysqli_connect("localhost", "root1", "pass");
-
-        //sprawdź czy jest połączenie z bazą danych
-        if (!$data_base)
-            die("<p> Nie można się połączyć z bazą danych!</p></body></html>");
-
-        // otwórz bazę danych
-        if (!mysqli_select_db($data_base, "PSW_DB"))
-            die("<p> Nie można otworzyć bazy danych PSW_DB</p></body></html>");
+        $data_base = connect_and_select_db("localhost", "root1", "pass", "PSW_DB");
 
 //        For successful SELECT, SHOW, DESCRIBE, or EXPLAIN queries mysqli_query will return a mysqli_result object.
 //        For other successful queries it will return TRUE. FALSE on failure
@@ -85,13 +77,6 @@
         $last_name = isset($_POST[ "last_name" ]) ? $_POST[ "last_name" ] : $row[2];
         $email = isset($_POST[ "email" ]) ? $_POST[ "email" ] : $row[4];
         $phone = isset($_POST[ "phone" ]) ? $_POST[ "phone" ] : $row[5];
-
-//        $login = $row[0];
-//        $password = $row[1];
-//        $last_name = $row[2];
-//        $first_name = $row[3];
-//        $email = $row[4];
-//        $phone = $row[5];
 
         print( "<h1>Edytuj swoje dane</h1>
             <p>Wypełnij pola i naciśnij GOTOWE, aby się edytować swoje dane</p>" );
@@ -166,18 +151,14 @@
             }
         }
 
-        //TO DO: sprawdzenie poprawności wpisanych wartości
-        // może zapisanie jaki to rodzaj błędu
-
         else{
-            $data_base = mysqli_connect("localhost", "root1", "pass");
+            $data_base = connect_and_select_db("localhost", "root1", "pass", "PSW_DB");
 
             if($is_register){
                 $query = "INSERT INTO users (Login, Password, LastName, FirstName, Email,Phone) VALUES ('$login', '$password', '$last_name', '$first_name', '$email', '$phone')";
 
             }
             else {
-//                $user = $_SESSION['user'];
                 $query = "UPDATE users
                            SET login = '$login',
                             password = '$password',
@@ -188,16 +169,6 @@
                             WHERE login = '$user'";
             }
 
-            //sprawdź czy jest połączenie z bazą danych
-            if (!$data_base)
-                die("<p> Nie można się połączyć z bazą danych!</p></body></html>");
-
-            // otwórz bazę danych
-            if (!mysqli_select_db($data_base, "PSW_DB"))
-                die("<p> Nie można otworzyć bazy danych PSW_DB</p></body></html>");
-
-//        For successful SELECT, SHOW, DESCRIBE, or EXPLAIN queries mysqli_query will return a mysqli_result object.
-//        For other successful queries it will return TRUE. FALSE on failure
             $result = mysqli_query( $data_base, $query);
             if (!$result){
                 print( "<p>Nie mozna wykonac działania!</p>" );
@@ -213,6 +184,19 @@
           <p>Telefon: $phone</p>
           </body></html>" );
             die();
+        }
+
+        function connect_and_select_db($host, $user, $pass, $db_name){
+            $data_base = mysqli_connect("$host", "$user", "$pass");
+
+            //sprawdź czy jest połączenie z bazą danych
+            if (!$data_base)
+                die("<p> Nie można się połączyć z bazą danych!</p></body></html>");
+
+            // otwórz bazę danych
+            if (!mysqli_select_db($data_base, "$db_name"))
+                die("<p> Nie można otworzyć bazy danych PSW_DB</p></body></html>");
+            return $data_base;
         }
     }
 
