@@ -56,6 +56,7 @@
     $phone = isset($_POST[ "phone" ]) ? $_POST[ "phone" ] : "";
 
     $is_error = false;
+    $formerrors = array("loginerror"=> false, "passworderror" => false, "emailerror" => false, "phoneerror" => false);
 
     // array of name values for the text input fields
     $inputlist = array( "login" => "Login", "password" => "Hasło", "first_name" => "Imię",
@@ -82,12 +83,43 @@
 
     if (isset( $_POST["submit"])){
         if ( $login == "" ) {
+            $formerrors["loginerror"] = true;
             $is_error = true;
         }
+        if ( $password == "" ) {
+            $formerrors["passworderror"] = true;
+            $is_error = true;
+        }
+        if (  !filter_var($email, FILTER_VALIDATE_EMAIL) ) {
+            $formerrors["emailerror"] = true;
+            $is_error = true;
+        }
+        if (!preg_match( "/^[0-9]{3}-[0-9]{3}-[0-9]{3}$/", $phone)) {
+            $formerrors["phoneerror"] = true;
+            $is_error = true;
+        }
+
+        if($is_error){
+            print("<p>DANE REJESTRACJI NIEPOPRAWNE!</p>");
+
+            if($formerrors["loginerror"]){
+                print("<p>login nie może być pusty!</p>"); 
+            }
+            if($formerrors["passworderror"]){
+                print("<p>haslo nie może być puste!</p>"); 
+            }
+            if($formerrors["emailerror"]){
+                print("<p>niepoprawny format adresu email!</p>"); 
+            }
+            if($formerrors["phoneerror"]){
+                print("<p>niepoprawny format telefonu! Poprawnyto 999-999-999</p>"); 
+            }
+        }
+
         //TO DO: sprawdzenie poprawności wpisanych wartości
         // może zapisanie jaki to rodzaj błędu
 
-        if(!$is_error){
+        else{
             $data_base = mysqli_connect("localhost", "root1", "pass");
             $query = "INSERT INTO users (Login, Password, LastName, FirstName, Email,Phone) VALUES ('$login', '$password', '$first_name', '$last_name', '$email', '$phone')";
             //sprawdź czy jest połączenie z bazą danych
