@@ -13,23 +13,70 @@
    </head>
    <body>
       <?php
-         // build SELECT query
-         $query = "SELECT * FROM Users";
+//////////////////////////////////
+print( "<!-- formularz -->
+<form method = 'post' action = 'db_test.php'>
+<h2>Filtruj</h2>" );
+
+
+print( "<div><label>Filtruj login:</label><input type = text
+name = filterlogin >" );
+print( "</div>" );
+
+print( "<div><label>Filtruj imie:</label><input type = text
+name = filterfname >" );
+print( "</div>" );
+
+print( "<p><input type = 'submit' name = 'submit'
+value = 'GOTOWE'></p></form></body></html>" );
+
+$filterlogin="";
+$filterfname = "";
+
+if(isset($_POST["filterlogin"]))
+{ $filterlogin = $_POST["filterlogin"];
+      print("<p>filtr dla loginu:$filterlogin</p>");
+     
+}
+if(isset($_POST["filterfname"]))
+{ $filterfname = $_POST["filterfname"];
+      print("<p>filtr dla imienia:$filterfname</p>");
+      
+}
+
+////////////
+
+      if(($filterlogin =="") && ($filterfname =="")){
+        $query = "SELECT * FROM Users"; }
+        else if(($filterlogin !="") && ($filterfname !="")){
+                 $query = "SELECT * FROM Users WHERE login = '$filterlogin' AND FirstName = '$filterfname'" ;   
+            }
+     else if(!($filterlogin =="")){
+
+           $query = "SELECT * FROM Users WHERE login = '$filterlogin'";   
+      }
+      else if(!($filterfname =="")){
+            
+                       $query = "SELECT * FROM Users WHERE FirstName = '$filterfname'";   
+                  }
+      else{
+            
+      }
+      
+
+       
         
-         // Connect to MySQL
          if ( !( $database = mysqli_connect("localhost", "root1", "pass") ) )
             die( "<p>Could not connect to database</p></body></html>" );
    
-         // open MailingList database
          if ( !mysqli_select_db( $database ,"PSW_DB" ) )
             die( "<p>Could not open  database</p>
                </body></html>" );
 
-         // query MailingList database
          if ( !( $result = mysqli_query( $database,$query ) ) ) 
          {
             print( "<p>Could not execute query!</p>" );
-            die( mysql_error() . "</body></html>" );
+            die( mysqli_error($database) );
          } // end if
       ?><!-- end PHP script -->
 
