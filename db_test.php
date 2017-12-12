@@ -27,11 +27,16 @@ print( "<div><label>Filtruj imie:</label><input type = text
 name = filterfname >" );
 print( "</div>" );
 
+print( "<div><label>Filtruj tel:</label><input type = text
+name = filtertel >" );
+print( "</div>" );
+
 print( "<p><input type = 'submit' name = 'submit'
 value = 'GOTOWE'></p></form></body></html>" );
 
 $filterlogin="";
 $filterfname = "";
+$filtertel = "";
 
 if(isset($_POST["filterlogin"]))
 { $filterlogin = $_POST["filterlogin"];
@@ -44,7 +49,14 @@ if(isset($_POST["filterfname"]))
       
 }
 
+if(isset($_POST["filtertel"]))
+{ $filtertel = $_POST["filtertel"];
+      print("<p>filtr dla tel:$filtertel</p>");
+      
+}
+
 ////////////
+
 
       if(($filterlogin =="") && ($filterfname =="")){
         $query = "SELECT * FROM Users"; }
@@ -54,14 +66,18 @@ if(isset($_POST["filterfname"]))
      else if(!($filterlogin =="")){
 
            $query = "SELECT * FROM Users WHERE login = '$filterlogin'";   
-      }
+      }    
       else if(!($filterfname =="")){
             
                        $query = "SELECT * FROM Users WHERE FirstName = '$filterfname'";   
                   }
-      else{
-            
-      }
+
+              if(!($filtertel =="")){
+            $qm = quotemeta("$filtertel");
+            $query = "SELECT * FROM Users WHERE phone = '$qm'";   
+                              }
+
+                  print("<p>$query</p>");
       
 
        
