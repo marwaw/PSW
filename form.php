@@ -28,6 +28,7 @@
     $USER = $_SESSION['user'];
     print("<p>User: $USER</p>");
     print("<p><a href='logout.php'> Logout</a></p>");
+    print("<p><a href = 'registerEditForm.php'> Edytuj swoje dane</a></p>");
 ?>
 
   <header>

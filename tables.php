@@ -26,6 +26,7 @@
         $USER = $_COOKIE['user'];
         print("<p>User: $USER</p>");
         print("<p><a href='logout.php'> Logout</a></p>");
+        print("<p><a href = 'registerEditForm.php'> Edytuj swoje dane</a></p>");
     ?>
    <header>
     <h1>PRZEPIŚNIK</h1>
