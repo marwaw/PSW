@@ -53,13 +53,6 @@
     <?php
     $is_register = true;
 
-    $login = isset($_POST[ "login" ]) ? $_POST[ "login" ] : "";
-    $password = isset($_POST[ "password" ]) ? $_POST[ "password" ] : "";
-    $first_name = isset($_POST[ "first_name" ]) ? $_POST[ "first_name" ] : "";
-    $last_name = isset($_POST[ "last_name" ]) ? $_POST[ "last_name" ] : "";
-    $email = isset($_POST[ "email" ]) ? $_POST[ "email" ] : "";
-    $phone = isset($_POST[ "phone" ]) ? $_POST[ "phone" ] : "";
-
     if(isset($_SESSION['user'])){
         $is_register = false;
         $user = $_SESSION["user"];
@@ -86,18 +79,31 @@
 
         mysqli_close( $data_base );
 
-        $login = $row[0];
-        $password = $row[1];
-        $last_name = $row[2];
-        $first_name = $row[3];
-        $email = $row[4];
-        $phone = $row[5];
+        $login = isset($_POST[ "login" ]) ? $_POST[ "login" ] : $row[0];
+        $password = isset($_POST[ "password" ]) ? $_POST[ "password" ] : $row[1];
+        $first_name = isset($_POST[ "first_name" ]) ? $_POST[ "first_name" ] : $row[3];
+        $last_name = isset($_POST[ "last_name" ]) ? $_POST[ "last_name" ] : $row[2];
+        $email = isset($_POST[ "email" ]) ? $_POST[ "email" ] : $row[4];
+        $phone = isset($_POST[ "phone" ]) ? $_POST[ "phone" ] : $row[5];
+
+//        $login = $row[0];
+//        $password = $row[1];
+//        $last_name = $row[2];
+//        $first_name = $row[3];
+//        $email = $row[4];
+//        $phone = $row[5];
 
         print( "<h1>Edytuj swoje dane</h1>
             <p>Wypełnij pola i naciśnij GOTOWE, aby się edytować swoje dane</p>" );
     }
 
     else {
+        $login = isset($_POST[ "login" ]) ? $_POST[ "login" ] : "";
+        $password = isset($_POST[ "password" ]) ? $_POST[ "password" ] : "";
+        $first_name = isset($_POST[ "first_name" ]) ? $_POST[ "first_name" ] : "";
+        $last_name = isset($_POST[ "last_name" ]) ? $_POST[ "last_name" ] : "";
+        $email = isset($_POST[ "email" ]) ? $_POST[ "email" ] : "";
+        $phone = isset($_POST[ "phone" ]) ? $_POST[ "phone" ] : "";
         print( "<h1>Zarejestruj się</h1>
             <p>Wypełnij wszystkie pola i naciśnij GOTOWE, aby się zarejestrować</p>" );
     }
