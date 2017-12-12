@@ -1,3 +1,6 @@
+<?php
+    session_start();
+    ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,12 +51,56 @@
 
 <div class = "page-content">
     <?php
+    $is_register = true;
+
     $login = isset($_POST[ "login" ]) ? $_POST[ "login" ] : "";
     $password = isset($_POST[ "password" ]) ? $_POST[ "password" ] : "";
     $first_name = isset($_POST[ "first_name" ]) ? $_POST[ "first_name" ] : "";
     $last_name = isset($_POST[ "last_name" ]) ? $_POST[ "last_name" ] : "";
     $email = isset($_POST[ "email" ]) ? $_POST[ "email" ] : "";
     $phone = isset($_POST[ "phone" ]) ? $_POST[ "phone" ] : "";
+
+    if(isset($_SESSION['user'])){
+        $is_register = false;
+        $user = $_SESSION["user"];
+        $query = "SELECT login, password, LastName, FirstName, email, phone FROM users WHERE login = '$user'";
+
+        $data_base = mysqli_connect("localhost", "root1", "pass");
+
+        //sprawdź czy jest połączenie z bazą danych
+        if (!$data_base)
+            die("<p> Nie można się połączyć z bazą danych!</p></body></html>");
+
+        // otwórz bazę danych
+        if (!mysqli_select_db($data_base, "PSW_DB"))
+            die("<p> Nie można otworzyć bazy danych PSW_DB</p></body></html>");
+
+//        For successful SELECT, SHOW, DESCRIBE, or EXPLAIN queries mysqli_query will return a mysqli_result object.
+//        For other successful queries it will return TRUE. FALSE on failure
+        $result = mysqli_query( $data_base, $query);
+        if (!$result){
+            print( "<p>Nie mozna wykonac działania!</p>" );
+            die( mysqli_error($data_base) );
+        }
+        $row = mysqli_fetch_row($result);
+
+        mysqli_close( $data_base );
+
+        $login = $row[0];
+        $password = $row[1];
+        $last_name = $row[2];
+        $first_name = $row[3];
+        $email = $row[4];
+        $phone = $row[5];
+
+        print( "<h1>Edytuj swoje dane</h1>
+            <p>Wypełnij pola i naciśnij GOTOWE, aby się edytować swoje dane</p>" );
+    }
+
+    else {
+        print( "<h1>Zarejestruj się</h1>
+            <p>Wypełnij wszystkie pola i naciśnij GOTOWE, aby się zarejestrować</p>" );
+    }
 
     $is_error = false;
 
@@ -62,9 +109,6 @@
         "last_name" => "Nazwisko", "email" => "Email",
         "phone" => "Telefon" );
 
-    print( "<h1>Zarejestruj się / edytuj swoje dane</h1>
-            <p>Wypełnij wszystkie pola i naciśnij GOTOWE, aby się zarejestrować</p>" );
-
     print( "<!-- formularz do rejestrowania/edycji danych -->
             <form method = 'post' action = 'registerEditForm.php'>
             <h2>Informacje o Tobie</h2>" );
@@ -72,7 +116,7 @@
 //    Tworzenie pól do wypełnienia przez użytkownika
     foreach ( $inputlist as $inputname => $inputalt )
     {
-        print( "<div><label>$inputalt:</label><input type = 'text'
+        print( "<div><label>$inputalt:</label><input type = $inputname == 'password' ? 'password' : 'text'
                name = '$inputname' value = '" . $$inputname . "'>" );
         print( "</div>" );
     }
@@ -89,7 +133,23 @@
 
         if(!$is_error){
             $data_base = mysqli_connect("localhost", "root1", "pass");
-            $query = "INSERT INTO users (Login, Password, LastName, FirstName, Email,Phone) VALUES ('$login', '$password', '$first_name', '$last_name', '$email', '$phone')";
+
+            if($is_register){
+                $query = "INSERT INTO users (Login, Password, LastName, FirstName, Email,Phone) VALUES ('$login', '$password', '$last_name', '$first_name', '$email', '$phone')";
+
+            }
+            else {
+//                $user = $_SESSION['user'];
+                $query = "UPDATE users
+                           SET login = '$login',
+                            password = '$password',
+                            LastName = '$last_name',
+                            FirstName = '$first_name',
+                            Email = '$email',
+                            phone = '$phone'
+                            WHERE login = '$user'";
+            }
+
             //sprawdź czy jest połączenie z bazą danych
             if (!$data_base)
                 die("<p> Nie można się połączyć z bazą danych!</p></body></html>");
@@ -107,10 +167,8 @@
             }
 
             mysqli_close( $data_base );
-
-            print( "<p>Cześć $first_name, dzięki za rejestracje!</p>
-          <p>The following information has been 
-             saved in our database:</p>
+            print( "<p>Cześć $first_name, dzięki za rejestrację!</p>
+          <p>Następujące informacje zostały zapisane do bazy danych:</p>
           <p>Login: $login</p>
           <p>Imię i nazwisko: $first_name $last_name</p>
           <p>Email: $email</p>
