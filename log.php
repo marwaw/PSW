@@ -67,6 +67,8 @@
        <input id = "reset" type = "reset" value = "Wyczyść" >
     </p> 
 	</form>
+
+    <p> Nie masz konta? <a href = "registerEditForm.php">Zarejestruj się!</a></p>
 </div>
 <footer>
     &copy;2017 Martyna i Ada
